@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Move issues which have a Available label to the project board column called Todo
-        if: github.event.label.name == '状態：開始前'
+        if: github.event.label.name == 'todo'
         uses: alex-page/github-project-automation-plus@v0.9.0
         with:
           project: Theme-Research Project

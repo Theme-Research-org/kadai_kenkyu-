@@ -3,8 +3,6 @@ name: 'Manage Issues for Project'
 on: 
   issues:
     types: [labeled]
-  pull_request:
-    types: [labeled]
 
 jobs:
   manage-issues-for-project:

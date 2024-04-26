@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Move issues which have a Available label to the project board column called Todo
         if: github.event.label.name == '状態：開始前'
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.9.0
         with:
           project: Theme-Research Project
           column: Todo
@@ -20,7 +20,7 @@ jobs:
 
       - name: Move issues which have a In Progress label to the project board column called In Progress
         if: github.event.label.name == '状態：進行中'
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.9.0
         with:
           project: Theme-Research Project
           column: In Progress
@@ -28,7 +28,7 @@ jobs:
 
       - name: Move issues which have a Completed label to the project board column called Completed
         if: github.event.label.name == '状態：完了'
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.9.0
         with:
           project: Theme-Research Project
           column: Completed

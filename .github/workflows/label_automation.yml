@@ -19,13 +19,13 @@ jobs:
         uses: andymckay/labeler@1.0.2
         with:
           add-labels: "status: Todo"
-          remove-labels: "status: In progress, status: Completed"
+          remove-labels: "status: In Progress, status: Completed"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
-      - name: Add In progress label
+      - name: Add In Progress label
         if: "github.event.action == 'assigned' || github.event.action == 'reopened'"
         uses: andymckay/labeler@1.0.2
         with:
-          add-labels: "status: In progress"
+          add-labels: "status: In Progress"
           remove-labels: "status: Todo, status: Completed"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
       - name: Add Completed label
@@ -33,7 +33,7 @@ jobs:
         uses: andymckay/labeler@1.0.2
         with:
           add-labels: "status: Completed"
-          remove-labels: "status: In progress, status: Todo"
+          remove-labels: "status: In Progress, status: Todo"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
   move_assigned_card:
@@ -46,4 +46,4 @@ jobs:
           project-url: https://github.com/orgs/Theme-Research-org/projects/3
           github-token: ${{ secrets.GHPROJECT_TOKEN }}
           field-name: Status
-          field-value: In progress
+          field-value: In Progress

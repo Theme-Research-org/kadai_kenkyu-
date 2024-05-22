@@ -7,7 +7,6 @@ env:
   PROJECT_NAME: Theme-Research project
 jobs:
   issue_labels:
-  move_assigned_card:
     runs-on: ubuntu-latest
     name: Move assigned card
     steps:

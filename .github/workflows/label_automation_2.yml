@@ -8,7 +8,7 @@ env:
 jobs:
   issue_labels:
     runs-on: ubuntu-latest
-    name: Move assigned card
+    name: Move labeled card
     steps:
       - uses: nipe0324/update-project-v2-item-field@v2.0.1
         if: "github.event.label.name == 'Status: Cancelled'"

@@ -19,21 +19,21 @@ jobs:
         uses: andymckay/labeler@1.0.2
         with:
           add-labels: "Status: Todo"
-          remove-labels: "Status: In Progress, Status: Completed"
+          remove-labels: "Status: In Progress, Status: Completed, Status: Cancelled"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
       - name: Add In Progress label
         if: "github.event.action == 'assigned' || github.event.action == 'reopened'"
         uses: andymckay/labeler@1.0.2
         with:
           add-labels: "Status: In Progress"
-          remove-labels: "Status: Todo, Status: Completed"
+          remove-labels: "Status: Todo, Status: Completed, Status: Cancelled"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
       - name: Add Completed label
         if: "github.event.action == 'closed' && github.event.issue.state_reason == 'completed'"
         uses: andymckay/labeler@1.0.2
         with:
           add-labels: "Status: Completed"
-          remove-labels: "Status: In Progress, Status: Todo"
+          remove-labels: "Status: In Progress, Status: Todo, Status: Cancelled"
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
   move_assigned_card:

@@ -13,6 +13,12 @@ const FName UHttpGPTHelper::ModelToName(const EHttpGPTChatModel Model)
 {
 	switch (Model)
 	{
+	case EHttpGPTChatModel::gpt4o:
+		return "gpt-4o";
+
+	case EHttpGPTChatModel::gpt4turbo:
+		return "gpt-4-turbo";
+
 	case EHttpGPTChatModel::gpt4:
 		return "gpt-4";
 
@@ -42,6 +48,14 @@ const FName UHttpGPTHelper::ModelToName(const EHttpGPTChatModel Model)
 
 const EHttpGPTChatModel UHttpGPTHelper::NameToModel(const FName Model)
 {
+	if (Model.IsEqual("gpt-4o", ENameCase::IgnoreCase))
+	{
+		return EHttpGPTChatModel::gpt4o;
+	}
+	if (Model.IsEqual("gpt-4-turbo", ENameCase::IgnoreCase))
+	{
+		return EHttpGPTChatModel::gpt4turbo;
+	}
 	if (Model.IsEqual("gpt-4", ENameCase::IgnoreCase))
 	{
 		return EHttpGPTChatModel::gpt4;
@@ -161,7 +175,7 @@ const TArray<FName> UHttpGPTHelper::GetAvailableGPTModels()
 {
 	TArray<FName> Output;
 
-	for (uint8 Iterator = static_cast<uint8>(EHttpGPTChatModel::gpt4); Iterator <= static_cast<uint8>(EHttpGPTChatModel::codedavinci002); ++Iterator)
+	for (uint8 Iterator = static_cast<uint8>(EHttpGPTChatModel::gpt4o); Iterator <= static_cast<uint8>(EHttpGPTChatModel::codedavinci002); ++Iterator)
 	{
 		if (const FName ModelName = ModelToName(static_cast<EHttpGPTChatModel>(Iterator)); !HttpGPT::Internal::HasEmptyParam(ModelName))
 		{
@@ -176,6 +190,8 @@ const FString UHttpGPTHelper::GetEndpointForModel(const EHttpGPTChatModel Model,
 {
 	switch (Model)
 	{
+	case EHttpGPTChatModel::gpt4o:
+	case EHttpGPTChatModel::gpt4turbo:
 	case EHttpGPTChatModel::gpt4:
 	case EHttpGPTChatModel::gpt432k:
 	case EHttpGPTChatModel::gpt35turbo:
@@ -211,6 +227,8 @@ const bool UHttpGPTHelper::ModelSupportsChat(const EHttpGPTChatModel Model)
 {
 	switch (Model)
 	{
+	case EHttpGPTChatModel::gpt4o:
+	case EHttpGPTChatModel::gpt4turbo:
 	case EHttpGPTChatModel::gpt4:
 	case EHttpGPTChatModel::gpt432k:
 	case EHttpGPTChatModel::gpt35turbo:

@@ -174,6 +174,8 @@ struct HTTPGPTCOMMONMODULE_API FHttpGPTChatResponse
 UENUM(BlueprintType, Category = "HttpGPT | Chat", Meta = (DisplayName = "HttpGPT Chat Model"))
 enum class EHttpGPTChatModel : uint8
 {
+	gpt4o UMETA(Displayname = "gpt-4o"),
+	gpt4turbo UMETA(DisplayName = "gpt-4-turbo"),
 	gpt4 UMETA(DisplayName = "gpt-4"),
 	gpt432k UMETA(DisplayName = "gpt-4-32k"),
 	gpt35turbo UMETA(DisplayName = "gpt-3.5-turbo"),

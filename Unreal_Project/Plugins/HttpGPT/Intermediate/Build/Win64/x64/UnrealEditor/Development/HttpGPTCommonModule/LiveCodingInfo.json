@@ -1,0 +1,17 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.HttpGPTCommonModule.cpp.obj": [
+			"HttpGPTCommonModule.init.gen.cpp.obj",
+			"HttpGPTImageTypes.gen.cpp.obj",
+			"HttpGPTCommonModule.cpp.obj",
+			"LogHttpGPT.cpp.obj",
+			"HttpGPTSettings.cpp.obj",
+			"HttpGPTCommonTypes.cpp.obj",
+			"HttpGPTImageTypes.cpp.obj",
+			"HttpGPTBaseTask.cpp.obj",
+			"HttpGPTChatTypes.cpp.obj",
+			"HttpGPTHelper.cpp.obj"
+		]
+	}
+}

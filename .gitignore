@@ -1,0 +1,16 @@
+Binaries
+DerivedDataCache
+Intermediate
+Saved
+.vscode
+.vs
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+!/Unreal_Project/Plugins/HttpGPT/Binaries
+!/Unreal_Project/Plugins/HttpGPT/Intermediate

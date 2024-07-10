@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\private\\speechrecognizerstringutils.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimespeechrecognizer\\definitions.runtimespeechrecognizer.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizerstringutils.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimespeechrecognizer\\uht\\speechrecognizerstringutils.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizerdefines.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\algo\\levenshteindistance.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

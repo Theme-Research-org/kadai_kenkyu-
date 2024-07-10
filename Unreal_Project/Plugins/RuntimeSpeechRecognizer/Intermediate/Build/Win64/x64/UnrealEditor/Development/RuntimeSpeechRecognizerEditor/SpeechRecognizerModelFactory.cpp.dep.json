@@ -1,0 +1,18 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizereditor\\private\\speechrecognizermodelfactory.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimespeechrecognizereditor\\definitions.runtimespeechrecognizereditor.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizereditor\\public\\speechrecognizermodelfactory.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimespeechrecognizereditor\\uht\\speechrecognizermodelfactory.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizereditor\\public\\speechrecognizereditordefines.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizermodel.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimespeechrecognizer\\uht\\speechrecognizermodel.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

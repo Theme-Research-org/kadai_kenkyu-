@@ -1,0 +1,33 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\private\\runtimeaudioexporter.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimeaudioimporter\\definitions.runtimeaudioimporter.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioexporter.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioimporterlibrary.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\sound\\importedsoundwave.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioimportertypes.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\audiocapturecore\\public\\audiocapturedeviceinterface.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioimporterdefines.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudioimportertypes.generated.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\sound\\soundwaveprocedural.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundwaveprocedural.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\importedsoundwave.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudioimporterlibrary.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudioexporter.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudiotranscoder.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\codecs\\raw_runtimecodec.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\signalprocessing\\public\\samplebuffer.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\signalprocessing\\public\\dsp\\floatarraymath.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudiotranscoder.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioutilities.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudioutilities.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

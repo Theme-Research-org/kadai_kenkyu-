@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\private\\metasound\\metasoundimportedwave.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimeaudioimporter\\definitions.runtimeaudioimporter.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

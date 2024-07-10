@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\private\\speechrecognizersettings.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimespeechrecognizer\\definitions.runtimespeechrecognizer.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizersettings.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizertypes.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimespeechrecognizer\\uht\\speechrecognizertypes.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimespeechrecognizer\\uht\\speechrecognizersettings.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizer\\public\\speechrecognizerdefines.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimespeechrecognizer\\source\\runtimespeechrecognizereditor\\public\\runtimespeechrecognizereditor.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\notifications\\snotificationlist.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\framework\\notifications\\notificationmanager.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\coreasynctasknotificationimpl.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\asynctasknotification.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

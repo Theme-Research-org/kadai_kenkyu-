@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\private\\codecs\\flac_runtimecodec.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\runtimeaudioimporter\\definitions.runtimeaudioimporter.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\codecs\\flac_runtimecodec.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\codecs\\baseruntimecodec.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioimportertypes.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\audiocapturecore\\public\\audiocapturedeviceinterface.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\public\\runtimeaudioimporterdefines.h",
+            "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\intermediate\\build\\win64\\unrealeditor\\inc\\runtimeaudioimporter\\uht\\runtimeaudioimportertypes.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\runtimeaudioimporter\\private\\codecs\\codecincludes.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\runtimeaudioimporter\\source\\thirdparty\\dr_flac.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.19041.0\\ucrt\\assert.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

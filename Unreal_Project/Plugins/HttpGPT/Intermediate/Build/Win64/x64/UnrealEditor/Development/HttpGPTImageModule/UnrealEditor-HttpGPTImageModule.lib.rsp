@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HttpGPTImageModule.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"J:\kadai_kenkyu-\Unreal_Project\Intermediate\Build\Win64\x64\Theme_ResearchEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp17.InclOrderOldest.h.obj"
+"J:\kadai_kenkyu-\Unreal_Project\Plugins\HttpGPT\Intermediate\Build\Win64\x64\UnrealEditor\Development\HttpGPTImageModule\Module.HttpGPTImageModule.cpp.obj"
+"J:\kadai_kenkyu-\Unreal_Project\Plugins\HttpGPT\Intermediate\Build\Win64\x64\UnrealEditor\Development\HttpGPTImageModule\Default.rc2.res"
+/OUT:"J:\kadai_kenkyu-\Unreal_Project\Plugins\HttpGPT\Intermediate\Build\Win64\x64\UnrealEditor\Development\HttpGPTImageModule\UnrealEditor-HttpGPTImageModule.lib"

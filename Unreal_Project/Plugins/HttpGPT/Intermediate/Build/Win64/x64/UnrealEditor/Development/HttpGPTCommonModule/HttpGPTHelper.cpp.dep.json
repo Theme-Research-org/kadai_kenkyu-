@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\private\\utils\\httpgpthelper.cpp",
+        "ProvidedModule": "",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp17.h.pch",
+        "Includes": [
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\httpgptcommonmodule\\definitions.httpgptcommonmodule.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\utils\\httpgpthelper.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\structures\\httpgptchattypes.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\structures\\httpgptcommontypes.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptcommontypes.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptchattypes.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\structures\\httpgptimagetypes.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptimagetypes.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgpthelper.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\httpgptinternalfuncs.h",
+            "f:\\visualstudio2022\\community\\vc\\tools\\msvc\\14.40.33807\\include\\string",
+            "f:\\visualstudio2022\\community\\vc\\tools\\msvc\\14.40.33807\\include\\xstring",
+            "f:\\visualstudio2022\\community\\vc\\tools\\msvc\\14.40.33807\\include\\__msvc_sanitizer_annotate_container.hpp",
+            "f:\\visualstudio2022\\community\\vc\\tools\\msvc\\14.40.33807\\include\\xpolymorphic_allocator.h",
+            "f:\\visualstudio2022\\community\\vc\\tools\\msvc\\14.40.33807\\include\\cctype",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgpthelper.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

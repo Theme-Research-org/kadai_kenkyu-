@@ -4,6 +4,8 @@
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/HttpGPTCommonModule.cpp"
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/LogHttpGPT.cpp"
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Management/HttpGPTSettings.cpp"
+#include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Structures/HttpGPTChatTypes.cpp"
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Structures/HttpGPTCommonTypes.cpp"
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Structures/HttpGPTImageTypes.cpp"
 #include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Tasks/HttpGPTBaseTask.cpp"
+#include "J:/kadai_kenkyu-/Unreal_Project/Plugins/HttpGPT/Source/HttpGPTCommonModule/Private/Utils/HttpGPTHelper.cpp"

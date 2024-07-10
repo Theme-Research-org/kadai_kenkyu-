@@ -3,7 +3,7 @@
     "Data": {
         "Source": "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\httpgptcommonmodule\\module.httpgptcommonmodule.cpp",
         "ProvidedModule": "",
-        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp17.h.pch",
+        "PCH": "j:\\kadai_kenkyu-\\unreal_project\\intermediate\\build\\win64\\x64\\theme_researcheditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp17.inclorderoldest.h.pch",
         "Includes": [
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\httpgptcommonmodule\\definitions.httpgptcommonmodule.h",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptcommonmodule.init.gen.cpp",
@@ -22,6 +22,10 @@
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptchattypes.generated.h",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptsettings.generated.h",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptsettings.gen.cpp",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\private\\structures\\httpgptchattypes.cpp",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\public\\utils\\httpgpthelper.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgpthelper.generated.h",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptchattypes.gen.cpp",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\private\\structures\\httpgptcommontypes.cpp",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptcommontypes.gen.cpp",
             "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\private\\structures\\httpgptimagetypes.cpp",
@@ -41,7 +45,9 @@
             "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\httpmodule.h",
             "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpresponse.h",
             "f:\\games\\epic games\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\scopetrylock.h",
-            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptbasetask.gen.cpp"
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgptbasetask.gen.cpp",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\source\\httpgptcommonmodule\\private\\utils\\httpgpthelper.cpp",
+            "j:\\kadai_kenkyu-\\unreal_project\\plugins\\httpgpt\\intermediate\\build\\win64\\unrealeditor\\inc\\httpgptcommonmodule\\uht\\httpgpthelper.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

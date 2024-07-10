@@ -14,3 +14,7 @@ Saved
 *.xcworkspace
 !/Unreal_Project/Plugins/HttpGPT/Binaries
 !/Unreal_Project/Plugins/HttpGPT/Intermediate
+!/Unreal_Project/Plugins/RuntimeSpeechRecognizer/Binaries
+!/Unreal_Project/Plugins/RuntimeSpeechRecognizer/Intermediate
+!/Unreal_Project/Plugins/RuntimeAudioImporter/Binaries
+!/Unreal_Project/Plugins/RuntimeAudioImporter/Intermediate

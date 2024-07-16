@@ -1,8 +1,0 @@
-{
-	"BuildId": "33043543",
-	"Modules": 
-	{
-		"RuntimeSpeechRecognizer": "UnrealEditor-RuntimeSpeechRecognizer.dll",
-		"RuntimeSpeechRecognizerEditor": "UnrealEditor-RuntimeSpeechRecognizerEditor.dll"
-	}
-}

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Theme_ResearchEditorTarget : TargetRules
 {
-	public Theme_ResearchEditorTarget(TargetInfo Target) : base(Target)
+	public Theme_ResearchEditorTarget( TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V5;

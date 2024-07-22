@@ -2878,18 +2878,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/Binaries/Win64/UnrealEditor-JsonBlueprintGraph.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/Binaries/Win64/UnrealEditor-JsonBlueprintUtilities.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Media/AndroidMedia/Binaries/Win64/UnrealEditor-AndroidMediaEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3603,18 +3591,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Web/HttpBlueprint/Binaries/Win64/UnrealEditor-HttpBlueprint.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Web/HttpBlueprint/Binaries/Win64/UnrealEditor-HttpBlueprintGraph.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Web/HttpBlueprint/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -26424,10 +26400,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/JsonBlueprintUtilities.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Media/AndroidMedia/AndroidMedia.uplugin",
 			"Type": "UFS"
 		},
@@ -26676,10 +26648,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Web/HttpBlueprint/HttpBlueprint.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/WorldMetrics/WorldMetrics.uplugin",
 			"Type": "UFS"
 		},
@@ -26770,7 +26738,6 @@
 		"GitSourceControl",
 		"GoogleCloudMessaging",
 		"GooglePAD",
-		"HttpBlueprint",
 		"IKRig",
 		"IOSDeviceProfileSelector",
 		"ImgMedia",
@@ -26778,7 +26745,6 @@
 		"Interchange",
 		"InterchangeEditor",
 		"InterchangeTests",
-		"JsonBlueprintUtilities",
 		"KDevelopSourceCodeAccess",
 		"LauncherChunkInstaller",
 		"LevelSequenceEditor",

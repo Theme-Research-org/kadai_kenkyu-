@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "MyGameModeBase.generated.h"
 
+DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnRequestCompleted, FString, ResponseContent, bool, bSuccess);
+
 /**
  * 
  */
@@ -18,7 +20,7 @@ public:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable, Category = Default)
-	void SendWavFileToAWS(FString& ResponseContent, bool& bSuccess);
+	void SendWavFileToAWS(const FOnRequestCompleted& OnCompleted);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Default)
 	int VarPublicNum = 10;

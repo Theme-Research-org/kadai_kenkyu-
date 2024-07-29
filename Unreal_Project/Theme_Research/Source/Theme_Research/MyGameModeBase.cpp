@@ -14,11 +14,8 @@ void AMyGameModeBase::BeginPlay()
     Super::BeginPlay();
 }
 
-void AMyGameModeBase::SendWavFileToAWS(FString& ResponseContent, bool& bSuccess)
+void AMyGameModeBase::SendWavFileToAWS(const FOnRequestCompleted& OnCompleted)
 {
-    ResponseContent = "";
-    bSuccess = false;
-
     FString SaveDirectory = FPaths::ProjectSavedDir();
     FString FilePath = SaveDirectory / TEXT("recording.wav");
 
@@ -28,6 +25,7 @@ void AMyGameModeBase::SendWavFileToAWS(FString& ResponseContent, bool& bSuccess)
         UE_LOG(LogTemp, Error, TEXT("Failed to load file: %s"), *FilePath);
         return;
     }
+    UE_LOG(LogTemp, Log, TEXT("FileData Size: %d"), FileData.Num());
 
     TSharedRef<IHttpRequest, ESPMode::ThreadSafe> HttpRequest = FHttpModule::Get().CreateRequest();
     HttpRequest->SetURL("https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py");
@@ -36,17 +34,17 @@ void AMyGameModeBase::SendWavFileToAWS(FString& ResponseContent, bool& bSuccess)
 
     HttpRequest->SetContent(FileData);
 
-    HttpRequest->OnProcessRequestComplete().BindLambda([&](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+    HttpRequest->OnProcessRequestComplete().BindLambda([OnCompleted](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
         {
             if (bWasSuccessful && Response->GetResponseCode() == 200)
             {
-                ResponseContent = Response->GetContentAsString();
-                bSuccess = true;
+                FString ResponseContent = Response->GetContentAsString();
+                OnCompleted.ExecuteIfBound(ResponseContent, true);
                 UE_LOG(LogTemp, Log, TEXT("Response: %s"), *ResponseContent);
             }
             else
             {
-                bSuccess = false;
+                OnCompleted.ExecuteIfBound("", false);
                 UE_LOG(LogTemp, Error, TEXT("Request failed. Response Code: %d"), Response->GetResponseCode());
             }
         });

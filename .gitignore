@@ -12,5 +12,3 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
-!/Unreal_Project/Plugins/HttpGPT/Binaries
-!/Unreal_Project/Plugins/HttpGPT/Intermediate

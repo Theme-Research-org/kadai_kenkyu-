@@ -38,8 +38,8 @@ public class Theme_Research : ModuleRules
             PrivateIncludePaths.Add("Theme_Research/Private/Android");
             PublicDependencyModuleNames.Add("Launch");
 
-            string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
-            AdditionalPropertiesForReceipt.Add("AndroidPlugin", System.IO.Path.Combine(PluginPath, "Theme_Research_APL.xml"));
+            string APLPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
+            AdditionalPropertiesForReceipt.Add("AndroidPlugin", System.IO.Path.Combine(APLPath, "Theme_Research_APL.xml"));
         }
 
         if (Target.Platform == UnrealTargetPlatform.IOS)

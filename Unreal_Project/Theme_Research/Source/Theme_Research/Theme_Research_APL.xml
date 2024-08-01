@@ -44,11 +44,10 @@ public class FilePickerActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_FILE_REQUEST && resultCode == RESULT_OK && data != null) {
+        if (requestCode == PICK_FILE_REQUEST &amp;&amp; resultCode == RESULT_OK &amp;&amp; data != null) {
             Uri uri = data.getData();
             if (uri != null) {
                 String path = uri.getPath();
-                Log.d("FilePicker", "Selected file: " + path);
                 nativeOnFilePicked(path);
             }
         }

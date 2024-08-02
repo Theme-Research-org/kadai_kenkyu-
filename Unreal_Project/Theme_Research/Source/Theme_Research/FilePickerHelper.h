@@ -7,7 +7,7 @@
 #include "FilePickerHelper.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class THEME_RESEARCH_API UFilePickerHelper : public UBlueprintFunctionLibrary
@@ -17,7 +17,7 @@ class THEME_RESEARCH_API UFilePickerHelper : public UBlueprintFunctionLibrary
 public:
 	UFUNCTION(BlueprintCallable, Category = "File Picker")
 	static void OpenFilePicker();
-	
+
 };
 
 #if PLATFORM_WINDOWS || PLATFORM_MAC

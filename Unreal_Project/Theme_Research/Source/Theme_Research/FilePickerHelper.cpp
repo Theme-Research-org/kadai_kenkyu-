@@ -25,7 +25,7 @@ void UFilePickerHelper::OpenFilePicker()
 {
 #if PLATFORM_WINDOWS || PLATFORM_MAC
     TArray<FString> SelectedFiles;
-    bool bFileOpened = OpenFileDialog(TEXT("Select a File"), FPaths::ProjectDir(), TEXT("All Files (*.*)|*.*"), SelectedFiles);
+    bool bFileOpened = OpenFileDialog(TEXT("Select a File"), FPaths::ProjectDir(), TEXT("Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp"), SelectedFiles);
 
     if (bFileOpened)
     {
@@ -40,28 +40,14 @@ void UFilePickerHelper::OpenFilePicker()
         jclass Class = FAndroidApplication::FindJavaClass("com/YourCompany/Theme_Research/FilePickerActivity");
         if (Class)
         {
-            // コンストラクタを取得
-            jmethodID Constructor = Env->GetMethodID(Class, "<init>", "()V");
-            if (Constructor)
+            jmethodID Method = Env->GetMethodID(Class, "pickFile", "()V");
+            if (Method)
             {
-                // インスタンスを作成
-                jobject Instance = Env->NewObject(Class, Constructor);
-                if (Instance)
-                {
-                    // 非静的メソッドのIDを取得
-                    jmethodID Method = Env->GetMethodID(Class, "pickFile", "()V");
-                    if (Method)
-                    {
-                        // インスタンスメソッドを呼び出す
-                        Env->CallVoidMethod(Instance, Method);
-                    }
-
-                    // インスタンスの参照を解放
-                    Env->DeleteLocalRef(Instance);
-}
+                jobject ActivityInstance = FAndroidApplication::GetGameActivityThis();
+                Env->CallVoidMethod(ActivityInstance, Method);
+            }
         }
     }
-}
 #elif PLATFORM_IOS
     [[FilePickerIOS sharedInstance]showFilePicker];
 #endif
@@ -90,7 +76,7 @@ bool OpenFileDialog(const FString& DialogTitle, const FString& DefaultPath, cons
 #if PLATFORM_ANDROID
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_YourCompany_Theme_Research_GameActivity_nativeOnFilePicked(JNIEnv* Env, jobject Thiz, jstring Path)
+Java_com_YourCompany_Theme_Research_FilePickerActivity_nativeOnFilePicked(JNIEnv* Env, jobject Thiz, jstring Path)
 {
     const char* NativeString = Env->GetStringUTFChars(Path, 0);
     FString PickedFilePath = FString(NativeString);

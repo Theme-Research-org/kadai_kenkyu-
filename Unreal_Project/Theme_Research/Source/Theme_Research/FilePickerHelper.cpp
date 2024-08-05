@@ -13,6 +13,7 @@
 #if PLATFORM_ANDROID
 #include "Android/AndroidJNI.h"
 #include "Android/AndroidApplication.h"
+#include "Async/Async.h"
 #endif
 
 #if PLATFORM_IOS
@@ -40,12 +41,10 @@ void UFilePickerHelper::OpenFilePicker()
         jclass Class = FAndroidApplication::FindJavaClass("com/YourCompany/Theme_Research/FilePickerActivity");
         if (Class)
         {
-            jmethodID Method = Env->GetMethodID(Class, "pickFile", "()V");
-            if (Method)
-            {
-                jobject ActivityInstance = FAndroidApplication::GetGameActivityThis();
-                Env->CallVoidMethod(ActivityInstance, Method);
-            }
+            jmethodID Constructor = Env->GetMethodID(Class, "<init>", "()V");
+            jobject ActivityInstance = Env->NewObject(Class, Constructor);
+            jmethodID MyMethodID = Env->GetMethodID(Class, "pickFile", "()V");
+            Env->CallVoidMethod(ActivityInstance, MyMethodID);
         }
     }
 #elif PLATFORM_IOS

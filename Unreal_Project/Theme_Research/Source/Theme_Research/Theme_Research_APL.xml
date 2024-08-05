@@ -16,7 +16,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
 import androidx.annotation.Nullable;
 import androidx.documentfile.provider.DocumentFile;
         </insert>
@@ -47,8 +48,13 @@ public class FilePickerActivity extends Activity {
         if (requestCode == PICK_FILE_REQUEST &amp;&amp; resultCode == RESULT_OK &amp;&amp; data != null) {
             Uri uri = data.getData();
             if (uri != null) {
-                String path = uri.getPath();
-                nativeOnFilePicked(path);
+                final String path = uri.getPath();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        nativeOnFilePicked(path);
+                    }
+                });
             }
         }
         finish();

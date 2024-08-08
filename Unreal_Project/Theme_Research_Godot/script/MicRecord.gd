@@ -23,7 +23,9 @@ func _on_RecordButton_pressed():
 		recording.set_format(format)
 		recording.set_stereo(stereo)
 		$RecordButton.text = "Record"
-		$Status.text = ""
+		var save_path = $SaveButton/Filename.text
+		recording.save_to_wav(save_path)
+		$Status.text = "Status: Saved WAV file to: %s\n(%s)" % [save_path, ProjectSettings.globalize_path(save_path)]
 	else:
 		$PlayButton.disabled = true
 		$SaveButton.disabled = true
@@ -52,10 +54,24 @@ func _on_Play_Music_pressed():
 		$PlayMusic.text = "Stop Music"
 
 
-func _on_SaveButton_pressed():
+func _on_SendButton_pressed():
+	var http_request = $HTTPRequest
 	var save_path = $SaveButton/Filename.text
-	recording.save_to_wav(save_path)
-	$Status.text = "Status: Saved WAV file to: %s\n(%s)" % [save_path, ProjectSettings.globalize_path(save_path)]
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		var content = file.get_buffer(file.get_length())
+		file.close()
+
+		var url = "https://88sh28xk3a.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py"
+		var headers = [
+			"Content-Type: application/octet-stream",
+			"Content-Length: " + str(content.size())
+		]
+		http_request.request_raw(url, headers, HTTPClient.METHOD_POST, content)
+	else:
+		$PlayButton.disabled = true
+		$SaveButton.disabled = true
+		$Status.text = "Error: File not found"
 
 
 func _on_MixRateOptionButton_item_selected(index: int) -> void:
@@ -94,3 +110,10 @@ func _on_StereoCheckButton_toggled(button_pressed: bool) -> void:
 
 func _on_open_user_folder_button_pressed():
 	OS.shell_open(ProjectSettings.globalize_path("user://"))
+
+
+func _on_http_request_request_completed(result:int, response_code:int, headers:PackedStringArray, body:PackedByteArray):
+	if response_code == 200:
+		print(JSON.parse_string(body.get_string_from_utf8()))
+	else:
+		$Status.text = "Failure: Uproad failed with response code: " + str(response_code)

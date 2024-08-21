@@ -11,7 +11,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	$LoginPop.show()
+	OS.shell_open("https://github.com/")
 
 
 func _on_quit_button_pressed():

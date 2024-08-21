@@ -5,7 +5,13 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_5vy5e")
 
 [node name="Label" type="Label" parent="."]
@@ -15,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 416.0
-offset_top = 120.0
-offset_right = 736.0
-offset_bottom = 260.0
+offset_left = -160.0
+offset_top = -232.0
+offset_right = 160.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
@@ -33,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 480.0
-offset_top = 384.0
-offset_right = 672.0
-offset_bottom = 447.0
+offset_left = -96.0
+offset_top = 24.0
+offset_right = 96.0
+offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
@@ -49,10 +55,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 480.0
-offset_top = 480.0
-offset_right = 672.0
-offset_bottom = 543.0
+offset_left = -96.0
+offset_top = 152.0
+offset_right = 96.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
@@ -60,6 +66,12 @@ text = "QUIT"
 
 [node name="LoginPop" parent="." instance=ExtResource("2_owsou")]
 visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -151,6 +151,15 @@ offset_bottom = 40.0
 text = "user://record.wav"
 caret_blink = true
 
+[node name="Token" type="LineEdit" parent="SaveButton"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 52.0
+offset_right = 704.0
+offset_bottom = 92.0
+text = "YOUR_TOKEN"
+caret_blink = true
+
 [node name="OpenUserFolderButton" type="Button" parent="."]
 layout_mode = 1
 offset_left = 209.0

@@ -2,6 +2,7 @@ extends Control
 
 var effect  # See AudioEffect in docs
 var recording  # See AudioStreamSample in docs
+var token
 
 var stereo := true
 var mix_rate := 44100  # This is the default mix rate on recordings
@@ -11,6 +12,13 @@ var format := 1  # This equals to the default format: 16 bits
 func _ready():
 	var idx = AudioServer.get_bus_index("Record")
 	effect = AudioServer.get_bus_effect(idx, 0)
+'''
+	var path = "user://userdata.txt"
+	var file = FileAccess.open(path, FileAccess.READ)
+	var json = JSON.parse_string(file.get_as_text().hex_decode().get_string_from_utf8())
+	token = json["access_token"]
+	print(token)
+'''
 
 
 func _on_RecordButton_pressed():
@@ -61,9 +69,10 @@ func _on_SendButton_pressed():
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		var content = file.get_buffer(file.get_length())
 		file.close()
-
+		var token_input = $SaveButton/Token.text
 		var url = "https://88sh28xk3a.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py"
 		var headers = [
+			"Authorization: Bearer " + token_input,
 			"Content-Type: application/octet-stream",
 			"Content-Length: " + str(content.size())
 		]
@@ -114,6 +123,6 @@ func _on_open_user_folder_button_pressed():
 
 func _on_http_request_request_completed(result:int, response_code:int, headers:PackedStringArray, body:PackedByteArray):
 	if response_code == 200:
-		print(JSON.parse_string(body.get_string_from_utf8()))
+		$Status.text = JSON.parse_string(body.get_string_from_utf8())["text"]
 	else:
 		$Status.text = "Failure: Uproad failed with response code: " + str(response_code)

@@ -19,9 +19,15 @@ anim_loop = false
 anim_loop_fade_in = true
 anim_expression = ""
 anim_motion = ""
+<<<<<<< Updated upstream
 ParamAngleX = 4.50778
 ParamAngleY = 2.48506
 ParamAngleZ = -0.010882
+=======
+ParamAngleX = -6.51459
+ParamAngleY = -0.973274
+ParamAngleZ = -0.53532
+>>>>>>> Stashed changes
 ParamEyeLOpen = 1.0
 ParamEyeLSmile = 0.0
 ParamEyeROpen = 1.0
@@ -39,10 +45,17 @@ ParamBrowRForm = 0.0
 ParamMouthForm = 0.0
 ParamMouthOpenY = 0.0
 ParamCheek = 0.0
+<<<<<<< Updated upstream
 ParamBodyAngleX = 1.16981
 ParamBodyAngleY = 0.0
 ParamBodyAngleZ = 0.0
 ParamBreath = 8.25226e-05
+=======
+ParamBodyAngleX = 1.61664
+ParamBodyAngleY = 0.0
+ParamBodyAngleZ = 0.0
+ParamBreath = 0.0225574
+>>>>>>> Stashed changes
 ParamHairFront = 0.0
 ParamHairSide = 0.0
 ParamHairBack = 0.0

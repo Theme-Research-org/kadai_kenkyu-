@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wby5pibyjals"]
+
+[ext_resource type="PackedScene" uid="uid://dn6x3a4nl0qng" path="res://model/3D/rabbit/兎お試し適当.fbx" id="1_vixpr"]
+
+[node name="3dTest" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_vixpr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

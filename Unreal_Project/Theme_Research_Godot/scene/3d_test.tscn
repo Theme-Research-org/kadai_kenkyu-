@@ -4,5 +4,5 @@
 
 [node name="3dTest" type="Node3D"]
 
-[node name="Root Scene" parent="." instance=ExtResource("1_vixpr")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+[node name="兎お試し適当" parent="." instance=ExtResource("1_vixpr")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, 0, 0, 0)

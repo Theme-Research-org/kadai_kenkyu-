@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using TMPro;
 
 public class ButtonFunc : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class ButtonFunc : MonoBehaviour
     [SerializeField] private AudioConvert audioConvert;
     [SerializeField] private Animator popUp;
     [SerializeField] private Collider2D panelC2D;
+    [SerializeField] private TMP_Dropdown dropdown;
 
     void Start()
     {
@@ -81,7 +84,7 @@ public class ButtonFunc : MonoBehaviour
     public void Exit()
     {
         #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
         #else
             Application.Quit();
         #endif
@@ -89,8 +92,11 @@ public class ButtonFunc : MonoBehaviour
 
     public void OpenMenu()
     {
-        panelC2D.enabled = true;
-        popUp.SetBool("bPopup",true);
+        if (!panelC2D.enabled)
+        {
+            panelC2D.enabled = true;
+            popUp.SetBool("bPopup", true);
+        }
     }
     public async void ExitMenu()
     {

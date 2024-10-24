@@ -1,9 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using TMPro;
+using System;
+using Unity.Android.Types;
 
 public class WhisperSTTMemory : MonoBehaviour
 {
@@ -28,23 +30,38 @@ public class WhisperSTTMemory : MonoBehaviour
             }
 
             string jsonResponse = request.downloadHandler.text;
-            string recognizedText = "";
-            try
-            {
-                recognizedText = JsonUtility.FromJson<WhisperResponseModel>(jsonResponse).text;
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError(e.Message);
-            }
+            WhisperResponseModel responseModel = JsonUtility.FromJson<WhisperResponseModel>(jsonResponse);
+            Debug.Log("Request Completed");
 
+            int freq = 24000;
+            // Base64エンコードされた音声データをデコード
+            byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
+            float[] audioFloats = ByteToFloatConverter.ConvertByteArrayToFloatArray(audioBytes);
+
+            
+            int sampleCount = audioFloats.Length;
+            float lengthSeconds = (float)sampleCount / freq;
+            Debug.Log(audioFloats);
+            
+            // デコードした音声データをAudioClipに変換
+            AudioClip audioClip = AudioClip.Create("GeneratedAudioClip", sampleCount, 1, freq, false);
+            audioClip.SetData(audioFloats, 0);
+
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            Debug.Log("Playing");
+
+            string recognizedText = responseModel.text;
             Debug.Log("Response: " + recognizedText);
             userVoiceText.SetText(recognizedText);
+            
         }
     }
 }
 
 public class WhisperResponseModel
 {
+    public string audio;    // Store the base64-encoded audio data
     public string text;
 }

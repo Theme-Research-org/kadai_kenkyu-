@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +8,6 @@ using TMPro;
 
 public class ButtonFunc : MonoBehaviour
 {
-    AudioClip myClip;
-    AudioSource audioSource;
-    string micName = "null";
     const int samplingFrequency = 44100;
     const int maxTime_s = 300;
 
@@ -20,19 +17,29 @@ public class ButtonFunc : MonoBehaviour
     [SerializeField] private Collider2D panelC2D;
     [SerializeField] private TMP_Dropdown dropdown;
 
+    AudioClip myClip;
+    AudioSource audioSource;
+    string micName = "";
+    List<string> micList = new List<string>();
+
     void Start()
     {
+        micList.Add("Use default device");
         foreach (string device in Microphone.devices)
         {
             Debug.Log("Name: " + device);
-            micName = device;
+            micList.Add(device);
         }
+        dropdown.AddOptions(micList);
     }
 
     public void StartButton()
     {
+        dropdown.enabled = false;
         Debug.Log("recording start");
         // deviceName: "null" -> Select default microphone
+        micName = dropdown.value == 0 ? "" : micList[dropdown.value];
+        Debug.Log(dropdown.value + micList[dropdown.value]);
         myClip = Microphone.Start(deviceName: micName, loop: false, lengthSec: maxTime_s, frequency: samplingFrequency);
     }
 
@@ -61,6 +68,8 @@ public class ButtonFunc : MonoBehaviour
             Debug.Log("Fixed Record: " + newClip.length);
 
             audioConvert.ProcessRecordedData(myClip);
+
+            dropdown.enabled = true;
         }
         else
         {

@@ -20,6 +20,7 @@ public class WhisperSTTMemory : MonoBehaviour
             request.uploadHandler = new UploadHandlerRaw(audioData);
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/octet-stream");
+            request.SetRequestHeader("X-Text-Only", "true");
 
             await request.SendWebRequest().ToUniTask();
 
@@ -33,6 +34,7 @@ public class WhisperSTTMemory : MonoBehaviour
             WhisperResponseModel responseModel = JsonUtility.FromJson<WhisperResponseModel>(jsonResponse);
             Debug.Log("Request Completed");
 
+            /*
             int freq = 24000;
             // Base64エンコードされた音声データをデコード
             byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
@@ -51,6 +53,7 @@ public class WhisperSTTMemory : MonoBehaviour
             audioSource.clip = audioClip;
             audioSource.Play();
             Debug.Log("Playing");
+            */
 
             string recognizedText = responseModel.text;
             Debug.Log("Response: " + recognizedText);

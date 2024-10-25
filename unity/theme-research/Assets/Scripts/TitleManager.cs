@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +9,11 @@ public class TitleManager : MonoBehaviour
 
     private Camera mainCamera;
     private bool inProgress = false;
+
+    void Awake()
+    {
+        Debug.Log(SystemInfo.deviceUniqueIdentifier);
+    }
 
     // Start is called before the first frame update
     void Start()

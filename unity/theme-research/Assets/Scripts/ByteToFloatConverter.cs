@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ByteToFloatConverter : MonoBehaviour
 {
-    public static float[] ConvertByteArrayToFloatArray(byte[] byteArray, int size = 2)
+    public static float[] ConvertByteArrayToFloatArray(byte[] byteArray, int size = 2)  // monoなら2, stereoなら4
     {
         // byte配列の長さがsizeの倍数であることを確認 (1つのfloatはsizeバイト)
         if (byteArray.Length % size != 0)

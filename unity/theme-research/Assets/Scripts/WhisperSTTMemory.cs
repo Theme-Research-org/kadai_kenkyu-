@@ -11,7 +11,7 @@ public class WhisperSTTMemory : MonoBehaviour
 {
     [SerializeField] private TMP_Text userVoiceText;
 
-    public async UniTask TranscribeAudioAsync(byte[] audioData)
+    public async UniTask TranscribeAudioAsync(byte[] audioData, string api, string voiceType, bool textOnly)
     {
         string url = "https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py";
 
@@ -20,7 +20,9 @@ public class WhisperSTTMemory : MonoBehaviour
             request.uploadHandler = new UploadHandlerRaw(audioData);
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/octet-stream");
-            request.SetRequestHeader("X-Text-Only", "true");
+            request.SetRequestHeader("X-Voice-Api", api);
+            request.SetRequestHeader("X-Voice-Type", voiceType);
+            request.SetRequestHeader("X-Text-Only", textOnly.ToString());
 
             await request.SendWebRequest().ToUniTask();
 
@@ -34,26 +36,27 @@ public class WhisperSTTMemory : MonoBehaviour
             WhisperResponseModel responseModel = JsonUtility.FromJson<WhisperResponseModel>(jsonResponse);
             Debug.Log("Request Completed");
 
-            /*
-            int freq = 24000;
-            // Base64エンコードされた音声データをデコード
-            byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
-            float[] audioFloats = ByteToFloatConverter.ConvertByteArrayToFloatArray(audioBytes);
+            if (!textOnly)
+            {
+                int freq = 24000;
+                // Base64エンコードされた音声データをデコード
+                byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
+                float[] audioFloats = ByteToFloatConverter.ConvertByteArrayToFloatArray(audioBytes);
 
-            
-            int sampleCount = audioFloats.Length;
-            float lengthSeconds = (float)sampleCount / freq;
-            Debug.Log(audioFloats);
-            
-            // デコードした音声データをAudioClipに変換
-            AudioClip audioClip = AudioClip.Create("GeneratedAudioClip", sampleCount, 1, freq, false);
-            audioClip.SetData(audioFloats, 0);
 
-            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            Debug.Log("Playing");
-            */
+                int sampleCount = audioFloats.Length;
+                float lengthSeconds = (float)sampleCount / freq;
+                Debug.Log(audioFloats);
+
+                // デコードした音声データをAudioClipに変換
+                AudioClip audioClip = AudioClip.Create("GeneratedAudioClip", sampleCount, 1, freq, false);
+                audioClip.SetData(audioFloats, 0);
+
+                AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                audioSource.clip = audioClip;
+                audioSource.Play();
+                Debug.Log("Playing");
+            }
 
             string recognizedText = responseModel.text;
             Debug.Log("Response: " + recognizedText);

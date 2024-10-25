@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +9,13 @@ public class AudioConvert : MonoBehaviour
 
     public async void ProcessRecordedData(AudioClip recordedClip)
     {
-        // AudioClip‚ğwavƒf[ƒ^‚É•ÏŠ·‚µ‚Äƒƒ‚ƒŠ‚É•Û‘¶
+        // AudioClipã‚’wavãƒ‡ãƒ¼ã‚¿ã«å¤‰æ›ã—ã¦ãƒ¡ãƒ¢ãƒªã«ä¿å­˜
         byte[] wavData = ConvertAudioClipToWav(recordedClip);
 
-        // ƒƒ‚ƒŠã‚Ìwavƒf[ƒ^‚ğg‚Á‚Ä‰¹º‘‚«‹N‚±‚µ‚ğs‚¤
+        // ãƒ¡ãƒ¢ãƒªä¸Šã®wavãƒ‡ãƒ¼ã‚¿ã‚’ä½¿ã£ã¦éŸ³å£°æ›¸ãèµ·ã“ã—ã‚’è¡Œã†
         if (whisperSTTMemory != null)
         {
-            await whisperSTTMemory.TranscribeAudioAsync(wavData);
+            await whisperSTTMemory.TranscribeAudioAsync(wavData, "tts", "nova", false);
         }
         else
         {

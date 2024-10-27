@@ -20,9 +20,9 @@ public class WhisperSTTMemory : MonoBehaviour
             request.uploadHandler = new UploadHandlerRaw(audioData);
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/octet-stream");
-            request.SetRequestHeader("X-Voice-Api", api);
-            request.SetRequestHeader("X-Voice-Type", voiceType);
-            request.SetRequestHeader("X-Text-Only", textOnly.ToString());
+            request.SetRequestHeader("x-voice-api", api);
+            request.SetRequestHeader("x-voice-type", voiceType);
+            request.SetRequestHeader("x-text-only", textOnly.ToString());
 
             await request.SendWebRequest().ToUniTask();
 

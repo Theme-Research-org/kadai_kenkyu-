@@ -5,17 +5,16 @@ using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using System;
-using Unity.Android.Types;
 
 public class WhisperSTTMemory : MonoBehaviour
 {
     [SerializeField] private TMP_Text userVoiceText;
+    const string URL = "https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py";
 
     public async UniTask TranscribeAudioAsync(byte[] audioData, string api, string voiceType, bool textOnly)
     {
-        string url = "https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py";
 
-        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        using (UnityWebRequest request = new UnityWebRequest(URL, "POST"))
         {
             request.uploadHandler = new UploadHandlerRaw(audioData);
             request.downloadHandler = new DownloadHandlerBuffer();
@@ -38,7 +37,7 @@ public class WhisperSTTMemory : MonoBehaviour
 
             if (!textOnly)
             {
-                int freq = 24000;
+                const int freq = 24000;
                 // Base64エンコードされた音声データをデコード
                 byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
                 float[] audioFloats = ByteToFloatConverter.ConvertByteArrayToFloatArray(audioBytes);

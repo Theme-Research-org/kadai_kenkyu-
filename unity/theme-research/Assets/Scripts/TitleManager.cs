@@ -7,8 +7,9 @@ public class TitleManager : MonoBehaviour
 {
     [SerializeField] private string targetScene;
 
-    private Camera mainCamera;
-    private bool inProgress = false;
+    private Camera _mainCamera;
+    private bool _inProgress;
+    private bool _bPressed;
 
     void Awake()
     {
@@ -18,21 +19,31 @@ public class TitleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = Camera.main;
+        _mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && !inProgress)
+        if (Input.GetMouseButton(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit2d = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
-            if (!hit2d)
+            if (!_inProgress && !_bPressed)
             {
-                inProgress = true;
-                SceneManager.LoadScene(targetScene);
+                Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D hit2d = Physics2D.Raycast(ray.origin, ray.direction);
+                if (!hit2d)
+                {
+                    _inProgress = true;
+                    SceneManager.LoadScene(targetScene);
+                }
             }
+
+            if (!_bPressed) _bPressed = true;
         }
+        else if (_bPressed)
+        {
+            _bPressed = false;
+        }
+        
     }
 }

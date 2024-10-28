@@ -30,7 +30,8 @@ public class ButtonFunc : MonoBehaviour
             Debug.Log("Name: " + device);
             micList.Add(device);
         }
-        dropdown.AddOptions(micList);
+        if (dropdown != null)
+            dropdown.AddOptions(micList);
     }
 
     public void StartButton()
@@ -62,7 +63,7 @@ public class ButtonFunc : MonoBehaviour
             }
             AudioClip newClip = AudioClip.Create(myClip.name, position, myClip.channels, myClip.frequency, false);
             newClip.SetData(newData, 0);
-            AudioClip.Destroy(myClip);
+            Destroy(myClip);
             myClip = newClip;
 
             Debug.Log("Fixed Record: " + newClip.length);

@@ -7,7 +7,7 @@ public class AudioConvert : MonoBehaviour
 {
     [SerializeField] private WhisperSTTMemory whisperSTTMemory;
 
-    public async void ProcessRecordedData(AudioClip recordedClip)
+    public async void ProcessRecordedData(AudioClip recordedClip, string api = "tts", string voiceType = "nova", bool textOnly = false)
     {
         // AudioClipをwavデータに変換してメモリに保存
         byte[] wavData = ConvertAudioClipToWav(recordedClip);
@@ -15,7 +15,7 @@ public class AudioConvert : MonoBehaviour
         // メモリ上のwavデータを使って音声書き起こしを行う
         if (whisperSTTMemory != null)
         {
-            await whisperSTTMemory.TranscribeAudioAsync(wavData, "tts", "nova", false);
+            await whisperSTTMemory.TranscribeAudioAsync(wavData, api, voiceType, textOnly);
         }
         else
         {

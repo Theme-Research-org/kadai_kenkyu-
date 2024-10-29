@@ -28,7 +28,7 @@ void AMyGameModeBase::SendWavFileToAWS(const FOnRequestCompleted& OnCompleted)
     UE_LOG(LogTemp, Log, TEXT("FileData Size: %d"), FileData.Num());
 
     TSharedRef<IHttpRequest, ESPMode::ThreadSafe> HttpRequest = FHttpModule::Get().CreateRequest();
-    HttpRequest->SetURL("https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py");
+    HttpRequest->SetURL("https://88sh28xk3a.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py");
     HttpRequest->SetVerb("POST");
     HttpRequest->SetHeader("Content-Type", "application/octet-stream");
 

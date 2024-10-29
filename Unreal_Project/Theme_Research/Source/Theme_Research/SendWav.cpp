@@ -53,7 +53,7 @@ void ASendWav::SendWavFileToAWS(FString& ResponseContent, bool& bSuccess)
 
     // HTTPリクエストを作成
     TSharedRef<IHttpRequest, ESPMode::ThreadSafe> HttpRequest = FHttpModule::Get().CreateRequest();
-    HttpRequest->SetURL("https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py");
+    HttpRequest->SetURL("https://88sh28xk3a.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py");
     HttpRequest->SetVerb("POST");
     HttpRequest->SetHeader("Content-Type", "application/octet-stream");
 

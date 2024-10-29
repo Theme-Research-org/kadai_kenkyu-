@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://b205w6ljuk20w"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_npscp"]
+viewport_path = NodePath("Sprite2D/GDCubismUserModel")
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(336, 61)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999999, 1.00003)
+scale = Vector2(1.26172, 1.26172)
+texture = SubResource("ViewportTexture_npscp")
+centered = false
+
+[node name="GDCubismUserModel" type="GDCubismUserModel" parent="Sprite2D"]
+assets = "res://model/2D/rabbit/うさぎモデル.model3.json"
+auto_scale = false
+adjust_scale = 0.24
+anim_loop = false
+anim_loop_fade_in = true
+anim_expression = ""
+anim_motion = ""
+ParamAngleX = 7.08537
+ParamAngleY = -2.21377
+ParamAngleZ = 4.67077
+ParamEyeLOpen = 1.0
+ParamEyeLSmile = 0.0
+ParamEyeROpen = 1.0
+ParamEyeRSmile = 0.0
+ParamEyeBallX = 0.0
+ParamEyeBallY = 0.0
+ParamBrowLY = 0.0
+ParamBrowRY = 0.0
+ParamBrowLX = 0.0
+ParamBrowRX = 0.0
+ParamBrowLAngle = 0.0
+ParamBrowRAngle = 0.0
+ParamBrowLForm = 0.0
+ParamBrowRForm = 0.0
+ParamMouthForm = 0.0
+ParamMouthOpenY = 0.0
+ParamCheek = 0.0
+ParamBodyAngleX = -1.5075
+ParamBodyAngleY = 0.0
+ParamBodyAngleZ = 0.0
+ParamBreath = 0.244505
+ParamHairFront = 0.0
+ParamHairSide = 0.0
+ParamHairBack = 0.0
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+render_target_update_mode = 4
+
+[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Sprite2D/GDCubismUserModel"]
+
+[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Sprite2D/GDCubismUserModel"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 863.0
+offset_top = -35.0
+offset_right = 913.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 30
+text = "三"

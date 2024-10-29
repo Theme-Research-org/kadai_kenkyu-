@@ -1,0 +1,154 @@
+[gd_scene load_steps=2 format=3 uid="uid://7wcajau1ei17"]
+
+[ext_resource type="Script" path="res://script/LoginPop.gd" id="1_w6idl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w6idl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 250)
+color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[node name="SignUpButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "新規登録"
+
+[node name="QuitButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = -6.0
+offset_right = -7.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "x"
+
+[node name="LoginButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 128.0
+offset_right = -32.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "ログイン"
+
+[node name="Mail" type="Control" parent="ColorRect"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -390.0
+offset_top = -110.0
+offset_right = -350.0
+offset_bottom = -70.0
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/Mail"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 428.0
+offset_top = 236.0
+offset_right = 812.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+virtual_keyboard_type = 5
+
+[node name="Label" type="Label" parent="ColorRect/Mail"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 224.0
+offset_right = 554.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 20
+text = "メールアドレス"
+
+[node name="Pass" type="Control" parent="ColorRect"]
+anchors_preset = 0
+offset_left = -390.0
+offset_top = -110.0
+offset_right = -350.0
+offset_bottom = -70.0
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/Pass"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 428.0
+offset_top = 340.0
+offset_right = 812.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+virtual_keyboard_type = 6
+secret = true
+
+[node name="Label" type="Label" parent="ColorRect/Pass"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 328.0
+offset_right = 524.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 20
+text = "パスワード"
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 322.0
+offset_right = 442.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="ColorRect/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ColorRect/LoginButton" to="." method="_on_login_button_pressed"]

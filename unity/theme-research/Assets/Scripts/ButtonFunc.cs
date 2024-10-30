@@ -48,7 +48,7 @@ public class ButtonFunc : MonoBehaviour
     {
         dropdown.enabled = false;
         Debug.Log("recording start");
-        // deviceName: "null" -> Select default microphone
+        // deviceName: "" (null) -> Select default microphone
         _micName = dropdown.value == 0 ? "" : _micList[dropdown.value];
         Debug.Log(dropdown.value + _micList[dropdown.value]);
         _myClip = Microphone.Start(deviceName: _micName, loop: false, lengthSec: maxTime_s, frequency: samplingFrequency);

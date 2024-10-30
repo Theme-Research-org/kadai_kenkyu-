@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using System;
+using System.Text;
 
 public class WhisperSTTMemory : MonoBehaviour
 {
@@ -13,13 +14,17 @@ public class WhisperSTTMemory : MonoBehaviour
 
     public async UniTask TranscribeAudioAsync(byte[] audioData, string api, string voiceType, bool textOnly)
     {
-
+        WhisperRequestModel whisperRequestModel = new WhisperRequestModel();
+        whisperRequestModel.UserId = PlayerPrefs.GetString("DeviceId");
+        whisperRequestModel.AudioData = Convert.ToBase64String(audioData);
+        string payload = JsonUtility.ToJson(whisperRequestModel);
+        byte[] postData = Encoding.UTF8.GetBytes(payload);
+        
         using (UnityWebRequest request = new UnityWebRequest(URL, "POST"))
         {
-            request.uploadHandler = new UploadHandlerRaw(audioData);
+            request.uploadHandler = new UploadHandlerRaw(postData);
             request.downloadHandler = new DownloadHandlerBuffer();
-            request.SetRequestHeader("Content-Type", "application/octet-stream");
-            request.SetRequestHeader("x-user-id", PlayerPrefs.GetString("UserId"));
+            request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("x-voice-api", api);
             request.SetRequestHeader("x-voice-type", voiceType);
             request.SetRequestHeader("x-text-only", textOnly.ToString());
@@ -33,6 +38,7 @@ public class WhisperSTTMemory : MonoBehaviour
             }
 
             string jsonResponse = request.downloadHandler.text;
+            Debug.Log(jsonResponse);
             WhisperResponseModel responseModel = JsonUtility.FromJson<WhisperResponseModel>(jsonResponse);
             Debug.Log("Request Completed");
 
@@ -57,8 +63,8 @@ public class WhisperSTTMemory : MonoBehaviour
                 audioSource.Play();
                 Debug.Log("Playing");
             }
-
-            string recognizedText = responseModel.text;
+            Debug.Log(responseModel.input);
+            string recognizedText = responseModel.output;
             Debug.Log("Response: " + recognizedText);
             userVoiceText.SetText(recognizedText);
             
@@ -66,8 +72,15 @@ public class WhisperSTTMemory : MonoBehaviour
     }
 }
 
+public class WhisperRequestModel
+{
+    public string UserId;
+    public string AudioData;
+}
+
 public class WhisperResponseModel
 {
     public string audio;    // Store the base64-encoded audio data
-    public string text;
+    public string input;
+    public string output;
 }

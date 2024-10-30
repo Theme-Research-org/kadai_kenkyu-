@@ -13,7 +13,7 @@ public class TitleManager : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.SetString("UserId", SystemInfo.deviceUniqueIdentifier);
+        PlayerPrefs.SetString("DeviceId", SystemInfo.deviceUniqueIdentifier);
     }
 
     // Start is called before the first frame update

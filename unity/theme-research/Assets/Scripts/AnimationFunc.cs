@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum AnimationEnum
 {
@@ -12,18 +13,18 @@ public enum AnimationEnum
 
 public class AnimationFunc : MonoBehaviour
 {
-    [SerializeField] private AnimationEnum _animationEnum;
-    private TMP_Text _text;
-    private float _cycle = 2.4f;
+    [SerializeField] private AnimationEnum animationEnum;
+    private SpriteRenderer _sprite;
+    private const float Cycle = 2.4f;
 
-    public string _animationName;
+    private string _animationName;
     private string _previousAnimation = "";
     private float _time = 0f;
 
     void Awake()
     {
-        _animationName = _animationEnum.ToString();
-        _text = GetComponent<TMP_Text>();
+        _animationName = animationEnum.ToString();
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -46,15 +47,15 @@ public class AnimationFunc : MonoBehaviour
 
     void OnDestroy()
     {
-        Destroy(_text);
+        Destroy(_sprite);
     }
 
     private void FadeLoop()
     {
-        float alpha = 0.5f * Mathf.Cos(_time / _cycle * 2 * Mathf.PI) + 0.5f;   // (-1 <= x <= 1) --> (0 >= x >= 1)
+        float alpha = 0.5f * Mathf.Cos(_time / Cycle * 2 * Mathf.PI) + 0.5f;   // (-1 <= x <= 1) --> (0 >= x >= 1)
 
-        Color color = _text.color;
+        Color color = _sprite.color;
         color.a = alpha;
-        _text.color = color;
+        _sprite.color = color;
     }
 }

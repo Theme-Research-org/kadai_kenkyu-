@@ -7,7 +7,6 @@
     <list default="true" id="5191681b-78ed-462c-a05b-56e44ec81a1b" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.theme-research/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.theme-research/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationFunc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationFunc.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +122,7 @@
       <workItem from="1730245687203" duration="11684000" />
       <workItem from="1730336347634" duration="1699000" />
       <workItem from="1730339505530" duration="677000" />
+      <workItem from="1730361466265" duration="4492000" />
     </task>
     <servers />
   </component>

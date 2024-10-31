@@ -67,14 +67,14 @@ If a user intentionally tries to increase or decrease an emotional parameter, do
 
 Output in the following JSON format:
 "emotion": {
-    "joy": <int, range(0, 9)>,
-    "trust": <int, range(0, 9)>,
-    "fear": <int, range(0, 9)>,
-    "anger": <int, range(0, 9)>,
-    "sadness": <int, range(0, 9)>,
-    "disgust": <int, range(0, 9)>,
-    "surprise": <int, range(0, 9)>,
-    "vigilance": <int, range(0, 9)>
+    "joy": <int,range(0,9)>,
+    "trust": <int,range(0,9)>,
+    "fear": <int,range(0,9)>,
+    "anger": <int,range(0,9)>,
+    "sadness": <int,range(0,9)>,
+    "disgust": <int,range(0,9)>,
+    "surprise": <int,range(0,9)>,
+    "vigilance": <int,range(0,9)>
 },
 "text": <string>
 

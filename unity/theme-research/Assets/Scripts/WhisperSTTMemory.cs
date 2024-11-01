@@ -69,15 +69,6 @@ public class WhisperSTTMemory : MonoBehaviour
             Debug.Log("Response Text: " + recognizedText);
             Debug.Log("Emotions: (" + recognizedEmotion.Join(", ") + ")");
             userVoiceText.SetText(recognizedText);
-            emotions.Find("TextJoy").GetComponent<TMP_Text>().SetText("喜び: " + recognizedEmotion.joy);
-            emotions.Find("TextTrust").GetComponent<TMP_Text>().SetText("信頼: " + recognizedEmotion.trust);
-            emotions.Find("TextFear").GetComponent<TMP_Text>().SetText("恐怖: " + recognizedEmotion.fear);
-            emotions.Find("TextAnger").GetComponent<TMP_Text>().SetText("怒り: " + recognizedEmotion.anger);
-            emotions.Find("TextSadness").GetComponent<TMP_Text>().SetText("悲しみ: " + recognizedEmotion.sadness);
-            emotions.Find("TextDisgust").GetComponent<TMP_Text>().SetText("嫌悪: " + recognizedEmotion.disgust);
-            emotions.Find("TextSurprise").GetComponent<TMP_Text>().SetText("驚き: " + recognizedEmotion.surprise);
-            emotions.Find("TextAnticipation").GetComponent<TMP_Text>().SetText("期待: " + recognizedEmotion.anticipation);
-            
         }
     }
 }

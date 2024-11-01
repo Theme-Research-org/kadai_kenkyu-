@@ -64,23 +64,10 @@ public class WhisperSTTMemory : MonoBehaviour
                 Debug.Log("Playing");
             }
             Debug.Log(responseModel.input);
-            string recognizedText = responseModel.output;
+            string recognizedText = responseModel.output.text;
             Debug.Log("Response: " + recognizedText);
             userVoiceText.SetText(recognizedText);
             
         }
     }
-}
-
-public class WhisperRequestModel
-{
-    public string UserId;
-    public string AudioData;
-}
-
-public class WhisperResponseModel
-{
-    public string audio;    // Store the base64-encoded audio data
-    public string input;
-    public string output;
 }

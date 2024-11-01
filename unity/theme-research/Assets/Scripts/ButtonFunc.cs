@@ -38,10 +38,13 @@ public class ButtonFunc : MonoBehaviour
         }
         if (dropdown != null)
             dropdown.AddOptions(_micList);
-        
-        _toggleApi = settings.Find("ToggleApi").GetComponent<Toggle>();
-        _toggleTextOnly = settings.Find("ToggleTextOnly").GetComponent<Toggle>();
-        _inputSpeaker = settings.Find("InputSpeaker").GetComponent<TMP_InputField>();
+
+        if (settings != null)
+        {
+            _toggleApi = settings.Find("ToggleApi").GetComponent<Toggle>();
+            _toggleTextOnly = settings.Find("ToggleTextOnly").GetComponent<Toggle>();
+            _inputSpeaker = settings.Find("InputSpeaker").GetComponent<TMP_InputField>();
+        }
     }
 
     public void StartButton()

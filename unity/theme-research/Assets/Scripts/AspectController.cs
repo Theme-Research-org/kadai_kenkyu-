@@ -16,7 +16,6 @@ public class AspectRatioController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Width: " + _parentRectTransform.rect.width + " Height: " + _parentRectTransform.rect.height);
         float newScale = _parentRectTransform.rect.height / _rectTransform.rect.height;
         _rectTransform.sizeDelta *= new Vector2(newScale, newScale);
     }

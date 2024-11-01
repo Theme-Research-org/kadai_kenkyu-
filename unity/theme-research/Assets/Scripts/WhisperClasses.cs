@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -37,8 +38,10 @@ public class WhisperEmotion
     public string surprise;
     public string anticipation;
 
-    public string Join(string sep = ",")
+    public string Join(string separator = ",")
     {
-        return joy + sep + trust + sep + fear + sep + anger + sep + sadness + sep + disgust + sep + surprise + sep + anticipation; 
+        string[] array = {joy, trust, fear, anger, sadness, disgust, surprise, anticipation};
+        var result = string.Join(separator, array);
+        return result; 
     }
 }

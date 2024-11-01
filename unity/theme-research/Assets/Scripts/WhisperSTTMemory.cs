@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using TMPro;
@@ -10,13 +8,16 @@ using System.Text;
 public class WhisperSTTMemory : MonoBehaviour
 {
     [SerializeField] private TMP_Text userVoiceText;
+    [SerializeField] private Transform emotions;
     const string URL = "https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py";
 
     public async UniTask TranscribeAudioAsync(byte[] audioData, string api, string voiceType, bool textOnly)
     {
-        WhisperRequestModel whisperRequestModel = new WhisperRequestModel();
-        whisperRequestModel.UserId = PlayerPrefs.GetString("DeviceId");
-        whisperRequestModel.AudioData = Convert.ToBase64String(audioData);
+        WhisperRequestModel whisperRequestModel = new WhisperRequestModel
+        {
+            UserId = PlayerPrefs.GetString("DeviceId"),
+            AudioData = Convert.ToBase64String(audioData)
+        };
         string payload = JsonUtility.ToJson(whisperRequestModel);
         byte[] postData = Encoding.UTF8.GetBytes(payload);
         
@@ -51,7 +52,6 @@ public class WhisperSTTMemory : MonoBehaviour
 
 
                 int sampleCount = audioFloats.Length;
-                float lengthSeconds = (float)sampleCount / freq;
                 Debug.Log(audioFloats);
 
                 // デコードした音声データをAudioClipに変換
@@ -65,8 +65,18 @@ public class WhisperSTTMemory : MonoBehaviour
             }
             Debug.Log(responseModel.input);
             string recognizedText = responseModel.output.text;
-            Debug.Log("Response: " + recognizedText);
+            WhisperEmotion recognizedEmotion = responseModel.output.emotion;
+            Debug.Log("Response Text: " + recognizedText);
+            Debug.Log("Emotions: (" + recognizedEmotion.Join(", ") + ")");
             userVoiceText.SetText(recognizedText);
+            emotions.Find("TextJoy").GetComponent<TMP_Text>().SetText("喜び: " + recognizedEmotion.joy);
+            emotions.Find("TextTrust").GetComponent<TMP_Text>().SetText("信頼: " + recognizedEmotion.trust);
+            emotions.Find("TextFear").GetComponent<TMP_Text>().SetText("恐怖: " + recognizedEmotion.fear);
+            emotions.Find("TextAnger").GetComponent<TMP_Text>().SetText("怒り: " + recognizedEmotion.anger);
+            emotions.Find("TextSadness").GetComponent<TMP_Text>().SetText("悲しみ: " + recognizedEmotion.sadness);
+            emotions.Find("TextDisgust").GetComponent<TMP_Text>().SetText("嫌悪: " + recognizedEmotion.disgust);
+            emotions.Find("TextSurprise").GetComponent<TMP_Text>().SetText("驚き: " + recognizedEmotion.surprise);
+            emotions.Find("TextAnticipation").GetComponent<TMP_Text>().SetText("期待: " + recognizedEmotion.anticipation);
             
         }
     }

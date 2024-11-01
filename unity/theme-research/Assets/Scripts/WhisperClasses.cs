@@ -35,5 +35,10 @@ public class WhisperEmotion
     public string sadness;
     public string disgust;
     public string surprise;
-    public string vigilance;
+    public string anticipation;
+
+    public string Join(string sep = ",")
+    {
+        return joy + sep + trust + sep + fear + sep + anger + sep + sadness + sep + disgust + sep + surprise + sep + anticipation; 
+    }
 }

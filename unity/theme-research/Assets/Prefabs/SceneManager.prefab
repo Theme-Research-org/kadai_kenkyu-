@@ -437,6 +437,7 @@ MonoBehaviour:
   fadeSpeed: 0.8
   background: {fileID: 4127047474018175330}
   text: {fileID: 8435360060309216056}
+  progressBar: {fileID: 6619765260034109006}
   pbBackground: {fileID: 5659034327785260579}
   pbFill: {fileID: 1101254752289563220}
 --- !u!1 &7120036843593473219

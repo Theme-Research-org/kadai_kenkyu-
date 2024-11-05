@@ -40,7 +40,7 @@ public class WhisperEmotion
 
     public string Join(string separator = ",")
     {
-        string[] array = {joy, trust, fear, anger, sadness, disgust, surprise, anticipation};
+        string[] array = { joy, trust, fear, anger, sadness, disgust, surprise, anticipation };
         var result = string.Join(separator, array);
         return result; 
     }

@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5f20e6c5c06d64e9ed2a2a49aea07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: Title
+  loadScene: Title
   audioConvert: {fileID: 534934154}
   popUp: {fileID: 0}
   panelC2D: {fileID: 0}
@@ -1428,6 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userVoiceText: {fileID: 349388877}
+  emotions: {fileID: 0}
 --- !u!114 &534934154
 MonoBehaviour:
   m_ObjectHideFlags: 0

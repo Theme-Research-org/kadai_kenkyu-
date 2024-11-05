@@ -1,19 +1,16 @@
 ﻿using System.Threading.Tasks;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System;
 using TMPro;
 using UnityEngine.UI;
 
 public class ButtonFunc : MonoBehaviour
 {
     private static readonly int BPopup = Animator.StringToHash("bPopup");
-    const int samplingFrequency = 44100;
-    const int maxTime_s = 300;
+    const int SamplingFrequency = 44100;
+    const int MaxTimeS = 300;
 
-    [SerializeField] private string _loadScene;
+    [SerializeField] private string loadScene;
     [SerializeField] private AudioConvert audioConvert;
     [SerializeField] private Animator popUp;
     [SerializeField] private Collider2D panelC2D;
@@ -54,12 +51,12 @@ public class ButtonFunc : MonoBehaviour
         // deviceName: "" (null) -> Select default microphone
         _micName = dropdown.value == 0 ? "" : _micList[dropdown.value];
         Debug.Log(dropdown.value + _micList[dropdown.value]);
-        _myClip = Microphone.Start(deviceName: _micName, loop: false, lengthSec: maxTime_s, frequency: samplingFrequency);
+        _myClip = Microphone.Start(deviceName: _micName, loop: false, lengthSec: MaxTimeS, frequency: SamplingFrequency);
     }
 
     public void EndButton()
     {
-        if (Microphone.IsRecording(deviceName: _micName) == true)
+        if (Microphone.IsRecording(deviceName: _micName))
         {
             Debug.Log("recording stopped");
             int position = Microphone.GetPosition(deviceName: _micName);
@@ -104,7 +101,7 @@ public class ButtonFunc : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene(_loadScene);
+        MyGameManager.SceneManager.SceneChange(loadScene);
     }
 
     public void Exit()

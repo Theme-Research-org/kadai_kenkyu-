@@ -7,14 +7,14 @@ public class EffectManager : MonoBehaviour
     public GameObject effectPrefab;
     public float maxScale = 1.5f;
     public float duration = 0.3f;
+    [SerializeField] private Camera mainCamera;
 
-    private Camera mainCamera;
     private bool bPressed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = Camera.main;
+        // mainCamera = Camera.main;
     }
 
     // Update is called once per frame

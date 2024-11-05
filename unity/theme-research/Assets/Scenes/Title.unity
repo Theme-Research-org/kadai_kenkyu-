@@ -1382,6 +1382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: chat_test
+  mainCamera: {fileID: 519420031}
 --- !u!4 &1575070910
 Transform:
   m_ObjectHideFlags: 0
@@ -1598,6 +1599,7 @@ MonoBehaviour:
   effectPrefab: {fileID: 7759126561813745015, guid: bedaf29d1e32f844ebaba04b09c0d28d, type: 3}
   maxScale: 1.5
   duration: 0.1
+  mainCamera: {fileID: 519420031}
 --- !u!4 &2088401739
 Transform:
   m_ObjectHideFlags: 0

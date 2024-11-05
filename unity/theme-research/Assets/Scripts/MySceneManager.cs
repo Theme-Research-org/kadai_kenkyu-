@@ -17,6 +17,7 @@ public class MySceneManager : MonoBehaviour
     
     private bool _firstSceneLoaded;
     private bool _sceneLoading;
+    private IEnumerator _activeCoroutine;
 
     void Awake()
     {
@@ -27,12 +28,6 @@ public class MySceneManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return FirstLoad();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator FirstLoad()
@@ -51,24 +46,35 @@ public class MySceneManager : MonoBehaviour
             background.color = color;
             yield return null;
         } while (color.a > 0f);
-        
+        background.enabled = false;
         _firstSceneLoaded = true;
     }
+
+    public void SceneChange(string loadScene)
+    {
+        if (_activeCoroutine != null)
+        {
+            StopCoroutine(_activeCoroutine);
+            _activeCoroutine = null;   // null埋めでCoroutineを破棄
+        }
+        _activeCoroutine = MyGameManager.SceneManager.LoadSceneWithScreen(loadScene);
+        StartCoroutine(_activeCoroutine);
+    }
     
-    public IEnumerator LoadSceneWithScreen(string sceneName)
+    private IEnumerator LoadSceneWithScreen(string sceneName)
     {
         if (!_firstSceneLoaded || _sceneLoading) yield break;
         
         _sceneLoading = true;
         var currentScene = SceneManager.GetActiveScene();
-        var async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        if (async == null) yield break;
-        while (!async.isDone) yield return null;
+        var asyncNew = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        if (asyncNew == null) yield break;
+        while (!asyncNew.isDone) yield return null;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
         if (currentScene != gameObject.scene)
         {
-            async = SceneManager.UnloadSceneAsync(currentScene);
-            while (!(async is { isDone: true })) yield return null;
+            var asyncOld = SceneManager.UnloadSceneAsync(currentScene);
+            while (asyncOld is not { isDone: true }) yield return null;
         }
         _sceneLoading = false;
     }

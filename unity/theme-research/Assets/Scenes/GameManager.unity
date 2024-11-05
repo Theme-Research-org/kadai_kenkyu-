@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &79843040
+--- !u!1001 &268741912
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2631482456340811323, guid: 94a5a36727beaca46a795b4eedb7a46a, type: 3}
+      propertyPath: firstScene
+      value: chat_test
+      objectReference: {fileID: 0}
     - target: {fileID: 2932449353456291415, guid: 94a5a36727beaca46a795b4eedb7a46a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -203,4 +207,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 79843040}
+  - {fileID: 268741912}

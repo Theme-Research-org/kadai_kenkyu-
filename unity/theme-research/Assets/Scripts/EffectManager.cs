@@ -9,29 +9,30 @@ public class EffectManager : MonoBehaviour
     public float duration = 0.3f;
     [SerializeField] private Camera mainCamera;
 
-    private bool bPressed = false;
+    private bool _bPressed;
 
     // Start is called before the first frame update
     void Start()
     {
-        // mainCamera = Camera.main;
+        Debug.Log("Start");
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && !bPressed)
+        if (Input.GetMouseButton(0) && !_bPressed)
         {
             Vector2 tapPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
             GameObject effect = Instantiate(effectPrefab, tapPos, Quaternion.identity, this.transform);
             Destroy(effect, duration);
-            bPressed = true;
+            _bPressed = true;
             StartCoroutine(ScaleEffect(effect.transform));
         }
-        else if (!Input.GetMouseButton(0) && bPressed)
+        else if (!Input.GetMouseButton(0) && _bPressed)
         {
-            bPressed = false;
+            _bPressed = false;
         }
     }
 
@@ -41,7 +42,7 @@ public class EffectManager : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            if (effectT == null)
+            if (!effectT)
             {
                 yield break;
             }

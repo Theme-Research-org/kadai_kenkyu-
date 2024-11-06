@@ -61,8 +61,8 @@ public class MySceneManager : MonoBehaviour
     {
         if (_firstSceneLoaded) yield break;
         var async = SceneManager.LoadSceneAsync(firstScene, LoadSceneMode.Additive);
-        if (async != null)
-            while (!async.isDone) yield return null;
+        if (async == null) yield break;
+        yield return new WaitUntil( () => async.isDone );
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(firstScene));
         
         yield return new WaitForSeconds(firstWait);
@@ -79,6 +79,10 @@ public class MySceneManager : MonoBehaviour
 
     public void SceneChange(string loadScene)
     {
+        if (!_firstSceneLoaded || _sceneLoading)
+        {
+            return;
+        }
         if (_activeCoroutine != null)
         {
             StopCoroutine(_activeCoroutine);
@@ -90,7 +94,6 @@ public class MySceneManager : MonoBehaviour
     
     private IEnumerator LoadSceneWithScreen(string newSceneName)
     {
-        if (!_firstSceneLoaded || _sceneLoading) yield break;
         _sceneLoading = true;
         background.enabled = true;
         var alphaStart = 0f;
@@ -104,12 +107,18 @@ public class MySceneManager : MonoBehaviour
         } while (alphaStart < 1f);
         
         var oldScene = SceneManager.GetActiveScene();
+        if (oldScene != gameObject.scene)
+        {
+            var asyncOld = SceneManager.UnloadSceneAsync(oldScene);
+            yield return new WaitUntil( () => asyncOld is { isDone: true } );
+        }
+        
         var asyncNew = SceneManager.LoadSceneAsync(newSceneName, LoadSceneMode.Additive);
         if (asyncNew == null) yield break;
         var startValue = 0f;
         var targetValue = 0f;
         var animDelta = 0f;
-        while (!asyncNew.isDone || progressBar.value < 1f)
+        while (progressBar.value < 1f)
         {
             if ((asyncNew.progress / 0.9f - targetValue >= 0.01f || asyncNew.progress >= 0.9f) && targetValue < 1f)
             {
@@ -118,15 +127,10 @@ public class MySceneManager : MonoBehaviour
                 animDelta = 0f;
             }
             animDelta += Time.deltaTime;
-            progressBar.value = startValue + (targetValue - startValue) * Mathf.Sin( Mathf.Min(animDelta / progressSpeed, 1f) * 0.5f * Mathf.PI );
+            progressBar.value = startValue + (targetValue - startValue) * Mathf.Sin(Mathf.Min(animDelta / progressSpeed, 1f) * 0.5f * Mathf.PI);
             yield return null;
         }
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(newSceneName));
-        if (oldScene != gameObject.scene)
-        {
-            var asyncOld = SceneManager.UnloadSceneAsync(oldScene);
-            while (asyncOld is not { isDone: true }) yield return null;
-        }
         yield return new WaitForSeconds(0.4f);
         
         var alphaEnd = 1f;
@@ -138,6 +142,8 @@ public class MySceneManager : MonoBehaviour
             SetAlpha(ref pbFill, alphaEnd);
             yield return null;
         } while (alphaEnd > 0f);
+
+        progressBar.value = 0f;
         background.enabled = false;
         _sceneLoading = false;
     }

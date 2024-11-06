@@ -5,7 +5,6 @@ public class TitleManager : MonoBehaviour
     [SerializeField] private string targetScene;
 
     [SerializeField] private Camera mainCamera;
-    private bool _inProgress;
     private bool _bPressed;
 
     void Awake()
@@ -24,13 +23,12 @@ public class TitleManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            if (!_inProgress && !_bPressed)
+            if (!_bPressed)
             {
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit2d = Physics2D.Raycast(ray.origin, ray.direction);
                 if (!hit2d)
                 {
-                    _inProgress = true;
                     MyGameManager.SceneManager.SceneChange(targetScene);
                 }
             }

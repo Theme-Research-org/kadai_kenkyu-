@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class AspectRatioController : MonoBehaviour
 {
-    public bool fitToWidth;  // Widthに合わせる場合はtrue、Heightに合わせる場合はfalse
+    // public bool fitToWidth;  // Widthに合わせる場合はtrue、Heightに合わせる場合はfalse
     private RectTransform _rectTransform;
     private RectTransform _parentRectTransform;
 

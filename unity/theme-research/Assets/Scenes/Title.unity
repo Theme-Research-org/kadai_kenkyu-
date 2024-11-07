@@ -928,7 +928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2174982405406285594, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 63385.516
+      value: 218668.47
       objectReference: {fileID: 0}
     - target: {fileID: 2177669963413828654, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34df9fe4257e6694ba2da16c02fbcc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: chat_test
+  targetScene: MainGame
   mainCamera: {fileID: 519420031}
 --- !u!4 &1575070910
 Transform:

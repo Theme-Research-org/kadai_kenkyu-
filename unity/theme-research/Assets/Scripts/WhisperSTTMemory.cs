@@ -49,10 +49,7 @@ public class WhisperSTTMemory : MonoBehaviour
                 // Base64エンコードされた音声データをデコード
                 byte[] audioBytes = Convert.FromBase64String(responseModel.audio);
                 float[] audioFloats = ByteToFloatConverter.ConvertByteArrayToFloatArray(audioBytes);
-
-
                 int sampleCount = audioFloats.Length;
-                Debug.Log(audioFloats);
 
                 // デコードした音声データをAudioClipに変換
                 AudioClip audioClip = AudioClip.Create("GeneratedAudioClip", sampleCount, 1, freq, false);

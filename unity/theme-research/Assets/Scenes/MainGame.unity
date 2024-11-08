@@ -538,7 +538,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3067.8347, y: 1325.7}
+  m_SizeDelta: {x: 3067.8345, y: 1325.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940621988
 MonoBehaviour:
@@ -747,9 +747,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2904798246308311313, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904798246308311313, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3247811715437965678, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423898785307447823, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
+      propertyPath: newScale
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3423898785307447823, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
       propertyPath: localScale
@@ -759,9 +771,13 @@ PrefabInstance:
       propertyPath: internalScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3423898785307447823, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
-      propertyPath: initExpression
-      value: 0
+    - target: {fileID: 5151588373347155367, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151588373347155367, guid: cc0997a84586b6a4b8885fa8726893cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

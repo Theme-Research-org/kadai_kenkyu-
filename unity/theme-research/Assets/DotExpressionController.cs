@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[ExecuteInEditMode]
 public class DotExpressionController : MonoBehaviour
 {
     [SerializeField, Range(0,4)] private int initExpression;
@@ -8,6 +11,7 @@ public class DotExpressionController : MonoBehaviour
     
     private DotExpressionParameter _param;
     private RectTransform[] _objects;
+    List<RectTransform> _objectsNew = new ();
     
     // Start is called before the first frame update
 
@@ -15,12 +19,16 @@ public class DotExpressionController : MonoBehaviour
     {
         _param = GetComponentInChildren<DotExpressionParameter>();
         _objects = GetComponentsInChildren<RectTransform>();
+        foreach (RectTransform rt in _objects)
+        {
+            if (rt != transform) _objectsNew.Add(rt);
+        }
     }
     
     void Update()
     {
         _param.SetExpression(initExpression);
-        foreach (var obj in _objects)
+        foreach (var obj in _objectsNew)
         {
             var scale = obj.localScale;
             scale.x = newScale;

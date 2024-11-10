@@ -11,7 +11,7 @@ public class DotExpressionController : MonoBehaviour
     
     private DotExpressionParameter _param;
     private RectTransform[] _objects;
-    List<RectTransform> _objectsNew = new ();
+    readonly List<RectTransform> _objectsNew = new ();
     
     // Start is called before the first frame update
 
@@ -21,7 +21,7 @@ public class DotExpressionController : MonoBehaviour
         _objects = GetComponentsInChildren<RectTransform>();
         foreach (RectTransform rt in _objects)
         {
-            if (rt != transform) _objectsNew.Add(rt);
+            if (rt != transform && !rt.CompareTag("IgnoreRect")) _objectsNew.Add(rt);
         }
     }
     

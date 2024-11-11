@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class SafeAreaPadding : MonoBehaviour
 {
     private RectTransform m_rectTransform;

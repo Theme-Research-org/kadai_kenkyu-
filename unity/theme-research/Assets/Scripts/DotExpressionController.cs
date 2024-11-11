@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class DotExpressionController : MonoBehaviour
 {
     [SerializeField, Range(0,4)] private int initExpression;

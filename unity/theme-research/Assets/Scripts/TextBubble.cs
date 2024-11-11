@@ -1,14 +1,18 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 [ExecuteAlways]
-public class BubbleSizeLimiter : MonoBehaviour
+public class TextBubble : MonoBehaviour
 {
-    [SerializeField] private RectTransform textTransform;
+    [Header("Settings")]
+    [SerializeField,TextArea(5,5)] private string text;
     [SerializeField] private float maxWidth;
     [SerializeField] private float maxHeight;
+    [Header("Assets")]
+    [SerializeField] private TMP_Text textAsset;
     
     private TMP_Text _text;
     private LayoutElement _layout;
@@ -16,13 +20,15 @@ public class BubbleSizeLimiter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _text = textTransform.GetComponent<TMP_Text>();
-        _layout = textTransform.GetComponent<LayoutElement>();
+        _text = textAsset.GetComponent<TMP_Text>();
+        _layout = _text.GetComponent<LayoutElement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        _text.SetText(text);
+        
         if (_text.preferredWidth > maxWidth && maxWidth > 0) _layout.preferredWidth = maxWidth;
         else _layout.preferredWidth = -1;
         if (_text.preferredHeight > maxHeight && maxHeight > 0) _layout.preferredHeight = maxHeight;

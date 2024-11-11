@@ -8,7 +8,6 @@ using System.Text;
 public class WhisperSTTMemory : MonoBehaviour
 {
     [SerializeField] private TMP_Text userVoiceText;
-    [SerializeField] private Transform emotions;
     const string URL = "https://brw84z1qzb.execute-api.ap-northeast-1.amazonaws.com/WhisperReq_Py";
 
     public async UniTask TranscribeAudioAsync(byte[] audioData, string api, string voiceType, bool textOnly)

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class DotExpressionParameter : MonoBehaviour
 {
     [Header("表情")]
-    [SerializeField, CustomLabel("初期表情")] private Sprite[] dotExpressions;
+    [SerializeField] private Sprite[] dotExpressions;
     
     private Image _image;
     

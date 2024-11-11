@@ -8,6 +8,7 @@ public class HandleSizeLimiter : MonoBehaviour
 {
     [SerializeField] float sizeMin;
     [SerializeField] float sizeMax;
+    [SerializeField] float sizeStep;
     private Scrollbar _scrollbar;
     // Start is called before the first frame update
     void Start()

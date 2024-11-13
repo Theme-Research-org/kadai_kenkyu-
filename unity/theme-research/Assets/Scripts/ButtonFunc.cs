@@ -12,7 +12,8 @@ public class ButtonFunc : MonoBehaviour
 
     [SerializeField] private string loadScene;
     [SerializeField] private AudioConvert audioConvert;
-    [SerializeField] private Animator popUp;
+    [SerializeField] private RectTransform popUp;
+    [SerializeField] private Canvas canvasPopUp;
     [SerializeField] private Collider2D panelC2D;
     [SerializeField] private TMP_Dropdown dropdown;
     [SerializeField] private Transform settings;
@@ -24,6 +25,7 @@ public class ButtonFunc : MonoBehaviour
     private Toggle _toggleApi;
     private Toggle _toggleTextOnly;
     private TMP_InputField _inputSpeaker;
+    private Animator _animatorPopUp;
 
     void Start()
     {
@@ -41,6 +43,11 @@ public class ButtonFunc : MonoBehaviour
             _toggleApi = settings.Find("ToggleApi").GetComponent<Toggle>();
             _toggleTextOnly = settings.Find("ToggleTextOnly").GetComponent<Toggle>();
             _inputSpeaker = settings.Find("InputSpeaker").GetComponent<TMP_InputField>();
+        }
+        
+        if (popUp != null) 
+        {
+            _animatorPopUp = popUp.GetComponent<Animator>();
         }
     }
 
@@ -117,14 +124,16 @@ public class ButtonFunc : MonoBehaviour
     {
         if (!panelC2D.enabled)
         {
+            canvasPopUp.enabled = true;
             panelC2D.enabled = true;
-            popUp.SetBool(BPopup, true);
+            _animatorPopUp.SetBool(BPopup, true);
         }
     }
     public async void ExitMenu()
     {
-        popUp.SetBool(BPopup, false);
-        await Task.Delay(800);
+        _animatorPopUp.SetBool(BPopup, false);
+        await Task.Delay(750);
+        canvasPopUp.enabled = false;
         panelC2D.enabled = false;
     }
 }

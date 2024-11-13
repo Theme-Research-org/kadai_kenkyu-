@@ -202,7 +202,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 32767
+  m_SortingOrder: 16385
   m_TargetDisplay: 0
 --- !u!224 &434789705
 RectTransform:
@@ -232,17 +232,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 434789705}
     m_Modifications:
+    - target: {fileID: 536830705858596971, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1381160099579553595, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_Size
-      value: 0.515
+      value: 0.4799997
       objectReference: {fileID: 0}
     - target: {fileID: 1381160099579553595, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_Value
-      value: 0.9999999
+      value: 0.9999954
       objectReference: {fileID: 0}
     - target: {fileID: 2174982405406285594, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0004865371
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 2177669963413828654, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -255,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 2177669963413828654, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852524613655207506, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0073754694
       objectReference: {fileID: 0}
     - target: {fileID: 5143851166418987765, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -302,11 +310,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149452232486951724, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5149452232486951724, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149452232486951724, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5149452232486951724, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,9 +368,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5149452232486951724, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6471895789292640643, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_Maskable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026202295521048230, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546197789154532546, guid: c8d521e92736a9d44be91a851945dab0, type: 3}
       propertyPath: m_Name
@@ -489,6 +509,10 @@ PrefabInstance:
     - target: {fileID: 4913531345584103928, guid: 94a5a36727beaca46a795b4eedb7a46a, type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913531345584103928, guid: 94a5a36727beaca46a795b4eedb7a46a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 16384
       objectReference: {fileID: 0}
     - target: {fileID: 7112155375645416115, guid: 94a5a36727beaca46a795b4eedb7a46a, type: 3}
       propertyPath: m_Name

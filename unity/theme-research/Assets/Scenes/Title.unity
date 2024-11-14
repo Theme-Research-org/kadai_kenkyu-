@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 505347746}
   - component: {fileID: 505347748}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920.0334, y: 1080}
+  m_SizeDelta: {x: 2427.9253, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505347746
 MonoBehaviour:
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 62ac400ba18e58641931f936f88d3eda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d24d2e7aa1f735d4d891721175f97930, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1292,7 +1292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScene: 
-  audioConvert: {fileID: 0}
   popUp: {fileID: 1700564024}
   canvasPopUp: {fileID: 437698343}
   panelC2D: {fileID: 437698345}
@@ -1659,7 +1658,7 @@ GameObject:
   - component: {fileID: 1873494496}
   - component: {fileID: 1873494495}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Outside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

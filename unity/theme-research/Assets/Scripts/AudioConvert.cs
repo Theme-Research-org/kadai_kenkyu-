@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class AudioConvert : MonoBehaviour 
 {
-    [SerializeField] private WhisperSTTMemory whisperSTTMemory;
+    private WhisperSTTMemory _whisperSTTMemory;
 
+    void Awake()
+    {
+        _whisperSTTMemory = GetComponent<WhisperSTTMemory>();
+    }
     public async void ProcessRecordedData(AudioClip recordedClip, string api = "tts", string voiceType = "nova", bool textOnly = false)
     {
         // AudioClipをwavデータに変換してメモリに保存
         byte[] wavData = ConvertAudioClipToWav(recordedClip);
 
         // メモリ上のwavデータを使って音声書き起こしを行う
-        if (whisperSTTMemory != null)
+        if (_whisperSTTMemory != null)
         {
-            await whisperSTTMemory.TranscribeAudioAsync(wavData, api, voiceType, textOnly);
+            await _whisperSTTMemory.TranscribeAudioAsync(wavData, api, voiceType, textOnly);
         }
         else
         {

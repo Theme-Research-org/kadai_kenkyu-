@@ -11,13 +11,13 @@ public class ButtonFunc : MonoBehaviour
     const int MaxTimeS = 300;
 
     [SerializeField] private string loadScene;
-    [SerializeField] private AudioConvert audioConvert;
     [SerializeField] private RectTransform popUp;
     [SerializeField] private Canvas canvasPopUp;
     [SerializeField] private Collider2D panelC2D;
     [SerializeField] private TMP_Dropdown dropdown;
     [SerializeField] private Transform settings;
 
+    private AudioConvert _audioConvert;
     private AudioClip _myClip;
     private AudioSource _audioSource;
     private string _micName = "";
@@ -27,6 +27,11 @@ public class ButtonFunc : MonoBehaviour
     private TMP_InputField _inputSpeaker;
     private Animator _animatorPopUp;
 
+    void Awake()
+    {
+        _audioConvert = GetComponent<AudioConvert>();
+    }
+    
     void Start()
     {
         _micList.Add("Use default device");
@@ -88,7 +93,7 @@ public class ButtonFunc : MonoBehaviour
             string api = _toggleApi.isOn ? "vv" : "tts";
             string voiceType = _inputSpeaker.text == "" ? "nova" : _inputSpeaker.text;
             bool textOnly = _toggleTextOnly.isOn;
-            audioConvert.ProcessRecordedData(_myClip, api, voiceType, textOnly);
+            _audioConvert.ProcessRecordedData(_myClip, api, voiceType, textOnly);
 
             dropdown.enabled = true;
         }

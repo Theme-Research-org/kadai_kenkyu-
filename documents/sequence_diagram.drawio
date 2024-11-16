@@ -80,21 +80,21 @@
             <mxPoint x="280" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-19" value="録音" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" source="SBilyFt_NwqlXyr4yw5q-32" target="SBilyFt_NwqlXyr4yw5q-34" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-19" value="録音" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" source="SBilyFt_NwqlXyr4yw5q-32" target="SBilyFt_NwqlXyr4yw5q-34" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="90" y="150" as="sourcePoint" />
             <mxPoint x="170" y="150" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-20" value="データ送信" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-37" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-20" value="データ送信" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-37" edge="1">
           <mxGeometry x="0.0526" y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="180" y="170" as="sourcePoint" />
             <mxPoint x="260" y="170" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-21" value="文字起こし" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-38" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-21" value="文字起こし" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-38" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="210" as="sourcePoint" />
             <mxPoint x="480" y="210" as="targetPoint" />
@@ -113,14 +113,14 @@
             <mxPoint x="285" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-26" value="会話履歴と発言を合わせて入力" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-41" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-26" value="会話履歴と発言を合わせて入力" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-41" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="330" as="sourcePoint" />
             <mxPoint x="580" y="330" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-28" value="会話履歴の取得" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-39" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-28" value="会話履歴の取得" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-39" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="270" as="sourcePoint" />
             <mxPoint x="380" y="270" as="targetPoint" />
@@ -151,7 +151,7 @@
         <mxCell id="SBilyFt_NwqlXyr4yw5q-41" value="" style="whiteSpace=wrap;html=1;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" vertex="1">
           <mxGeometry x="575" y="330" width="10" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-42" value="レスポンステキストを音声に変換" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-44" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-42" value="レスポンステキストを音声に変換" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-44" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="390" as="sourcePoint" />
             <mxPoint x="675" y="390" as="targetPoint" />
@@ -173,7 +173,7 @@
             <mxPoint x="285" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SBilyFt_NwqlXyr4yw5q-48" value="会話の保存" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;" parent="1" target="SBilyFt_NwqlXyr4yw5q-49" edge="1">
+        <mxCell id="SBilyFt_NwqlXyr4yw5q-48" value="会話の保存" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=#232F3E;strokeColor=#232F3E;fontStyle=1" parent="1" target="SBilyFt_NwqlXyr4yw5q-49" edge="1">
           <mxGeometry y="-10" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="450" as="sourcePoint" />
             <mxPoint x="380" y="450" as="targetPoint" />

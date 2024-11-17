@@ -16,7 +16,8 @@ public class ButtonFunc : MonoBehaviour
     [SerializeField] private Collider2D panelC2D;
     [SerializeField] private TMP_Dropdown dropdown;
     [SerializeField] private Transform settings;
-
+    [SerializeField] private Toggle toggleRecord;
+    
     private AudioConvert _audioConvert;
     private AudioClip _myClip;
     private AudioSource _audioSource;
@@ -58,14 +59,54 @@ public class ButtonFunc : MonoBehaviour
 
     public void StartButton()
     {
-        dropdown.enabled = false;
-        Debug.Log("recording start");
-        // deviceName: "" (null) -> Select default microphone
-        _micName = dropdown.value == 0 ? "" : _micList[dropdown.value];
-        Debug.Log(dropdown.value + _micList[dropdown.value]);
-        _myClip = Microphone.Start(deviceName: _micName, loop: false, lengthSec: MaxTimeS, frequency: SamplingFrequency);
+        if (toggleRecord.isOn)
+        {
+            dropdown.enabled = false;
+            Debug.Log("recording start");
+            // deviceName: "" (null) -> Select default microphone
+            _micName = dropdown.value == 0 ? "" : _micList[dropdown.value];
+            Debug.Log(dropdown.value + _micList[dropdown.value]);
+            _myClip = Microphone.Start(deviceName: _micName, loop: false, lengthSec: MaxTimeS, frequency: SamplingFrequency);
+        }
+        else
+        {
+            if (Microphone.IsRecording(deviceName: _micName))
+            {
+                Debug.Log("recording stopped");
+                int position = Microphone.GetPosition(deviceName: _micName);
+                Microphone.End(deviceName: _micName);
+
+                Debug.Log("Raw Record: " + _myClip.length);
+
+                float[] soundData = new float[_myClip.samples * _myClip.channels];
+                _myClip.GetData(soundData, 0);
+                float[] newData = new float[position * _myClip.channels];
+                for (int i = 0; i < newData.Length; i++)
+                {
+                    newData[i] = soundData[i];
+                }
+                AudioClip newClip = AudioClip.Create(_myClip.name, position, _myClip.channels, _myClip.frequency, false);
+                newClip.SetData(newData, 0);
+                Destroy(_myClip);
+                _myClip = newClip;
+
+                Debug.Log("Fixed Record: " + newClip.length);
+
+                string api = "vv";
+                string voiceType = "3";
+                _audioConvert.ProcessRecordedData(_myClip, api, voiceType, false);
+
+                dropdown.enabled = true;
+            }
+            else
+            {
+                Debug.Log("not recording");
+            }
+        }
+
     }
 
+    /* Integrated into StartButton
     public void EndButton()
     {
         if (Microphone.IsRecording(deviceName: _micName))
@@ -102,6 +143,7 @@ public class ButtonFunc : MonoBehaviour
             Debug.Log("not recording");
         }
     }
+    */
 
     public void PlayButton()
     {

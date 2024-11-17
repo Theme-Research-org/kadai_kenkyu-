@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class MySceneManager : MonoBehaviour
     [SerializeField] private Slider progressBar;
     [SerializeField] private Image pbBackground;
     [SerializeField] private Image pbFill;
+    [SerializeField] private Canvas[] canvasList;
+    [SerializeField] private GameObject[] panelList;
     
     private bool _firstSceneLoaded;
     private bool _sceneLoading;
@@ -63,7 +66,15 @@ public class MySceneManager : MonoBehaviour
         var async = SceneManager.LoadSceneAsync(firstScene, LoadSceneMode.Additive);
         if (async == null) yield break;
         yield return new WaitUntil( () => async.isDone );
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(firstScene));
+        var sceneByName = SceneManager.GetSceneByName(firstScene);
+        SceneManager.SetActiveScene(sceneByName);
+        var cam = Camera.main;
+        Debug.Log(cam.name);
+        foreach (var canvas in canvasList)
+        {
+            canvas.worldCamera = cam;
+        }
+        TogglePanel(firstScene);
         
         yield return new WaitForSeconds(firstWait);
         
@@ -75,6 +86,14 @@ public class MySceneManager : MonoBehaviour
         } while (alpha > 0f);
         background.enabled = false;
         _firstSceneLoaded = true;
+    }
+
+    private void TogglePanel(string panelName)
+    {
+        foreach (var panel in panelList)
+        {
+            panel.SetActive(panel.name == panelName);
+        }
     }
 
     public void SceneChange(string loadScene)
@@ -131,6 +150,7 @@ public class MySceneManager : MonoBehaviour
             yield return null;
         }
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(newSceneName));
+        TogglePanel(newSceneName);
         yield return new WaitForSeconds(0.4f);
         
         var alphaEnd = 1f;

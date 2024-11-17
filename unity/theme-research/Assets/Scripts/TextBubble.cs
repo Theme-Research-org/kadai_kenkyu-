@@ -17,8 +17,7 @@ public class TextBubble : MonoBehaviour
     private TMP_Text _text;
     private LayoutElement _layout;
     
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _text = textAsset.GetComponent<TMP_Text>();
         _layout = _text.GetComponent<LayoutElement>();
@@ -33,5 +32,10 @@ public class TextBubble : MonoBehaviour
         else _layout.preferredWidth = -1;
         if (_text.preferredHeight > maxHeight && maxHeight > 0) _layout.preferredHeight = maxHeight;
         else _layout.preferredHeight = -1;
+    }
+
+    public void SetText(string t)
+    {
+        
     }
 }

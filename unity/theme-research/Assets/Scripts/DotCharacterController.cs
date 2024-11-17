@@ -14,6 +14,8 @@ public class DotCharacterController : MonoBehaviour
     
     private void Awake()
     {
+        MyGameManager.CharacterText = GetComponent<TextBubble>();
+        
         _param = GetComponentInChildren<DotExpressionParameter>();
         _objects = GetComponentsInChildren<RectTransform>();
         foreach (RectTransform rt in _objects)

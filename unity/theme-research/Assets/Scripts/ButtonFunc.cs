@@ -93,8 +93,8 @@ public class ButtonFunc : MonoBehaviour
                 Debug.Log("Fixed Record: " + newClip.length);
 
                 string api = "vv";
-                string voiceType = "3";
-                _audioConvert.ProcessRecordedData(_myClip, api, voiceType, false);
+                string voiceType = "8"; // 春日部つむぎ (ノーマル)
+                _audioConvert.ProcessRecordedData(_myClip, api, voiceType);
 
                 dropdown.enabled = true;
             }

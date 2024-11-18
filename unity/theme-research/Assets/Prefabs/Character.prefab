@@ -260,9 +260,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Lorem ipsum
+  textSpeed: 8
+  displayTime: 4
   maxWidth: 128
   maxHeight: 0
-  textAsset: {fileID: 1271471568802444786}
+  bubbleAsset: {fileID: 4309880765335968364}
 --- !u!82 &5705028680328707136
 AudioSource:
   m_ObjectHideFlags: 0

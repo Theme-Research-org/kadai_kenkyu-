@@ -5,6 +5,8 @@ using UnityEngine;
 [ExecuteAlways]
 public class DotCharacterController : MonoBehaviour
 {
+    public TextBubble Bubble { get; set; }
+    
     [SerializeField,Range(0,4)] private int initExpression;
     [SerializeField] private float newScale = 1f;
     
@@ -14,7 +16,8 @@ public class DotCharacterController : MonoBehaviour
     
     private void Awake()
     {
-        MyGameManager.CharacterText = GetComponent<TextBubble>();
+        Bubble = transform.GetComponent<TextBubble>();
+        MyGameManager.CurrentCharacter = this;
         
         _param = GetComponentInChildren<DotExpressionParameter>();
         _objects = GetComponentsInChildren<RectTransform>();

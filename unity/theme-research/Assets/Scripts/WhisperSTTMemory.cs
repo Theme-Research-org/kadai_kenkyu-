@@ -64,7 +64,7 @@ public class WhisperSTTMemory : MonoBehaviour
             WhisperEmotion recognizedEmotion = responseModel.output.emotion;
             Debug.Log("Response Text: " + recognizedText);
             Debug.Log("Emotions: (" + recognizedEmotion.Join(", ") + ")");
-            userVoiceText.SetText(recognizedText);
+            MyGameManager.CurrentCharacter.Bubble.text = recognizedText;
         }
     }
 }

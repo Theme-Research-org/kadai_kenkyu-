@@ -28,7 +28,8 @@ public class TextBubble : MonoBehaviour
     {
         TMPText = bubbleAsset.GetComponentInChildren<TMP_Text>();
         _layout = TMPText.GetComponent<LayoutElement>();
-        if (!EditorApplication.isPlaying) return;
+        _currentText = text;
+        //if (!EditorApplication.isPlaying) return;
         
         bubbleAsset.SetActive(false);
     }
@@ -37,7 +38,7 @@ public class TextBubble : MonoBehaviour
     void Update()
     {
         AdjustSize();
-        if (!EditorApplication.isPlaying) return;
+        //if (!EditorApplication.isPlaying) return;
         
         _elapsedTime += Time.deltaTime;
         if (text != _currentText)

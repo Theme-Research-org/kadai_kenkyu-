@@ -29,19 +29,33 @@ public class WhisperOutput
 [System.Serializable]
 public class WhisperEmotion
 {
-    public string joy;
-    public string trust;
-    public string fear;
-    public string anger;
-    public string sadness;
-    public string disgust;
-    public string surprise;
-    public string anticipation;
+    public int joy;
+    public int trust;
+    public int fear;
+    public int anger;
+    public int sadness;
+    public int disgust;
+    public int surprise;
+    public int anticipation;
 
     public string Join(string separator = ",")
     {
-        string[] array = { joy, trust, fear, anger, sadness, disgust, surprise, anticipation };
+        int[] array = { joy, trust, fear, anger, sadness, disgust, surprise, anticipation };
         var result = string.Join(separator, array);
-        return result; 
+        return result;
     }
+
+    public string MaxParam()
+    {
+        var result = joy > trust ? "joy" : 
+            trust > fear ? "trust" : 
+            fear > anger ? "fear" : 
+            anger > sadness ? "anger" : 
+            sadness > disgust ? "sadness" :
+            disgust > surprise ? "disgust" : 
+            surprise > anticipation ? "surprise" : "anticipation";
+
+        return result;
+    }
+    
 }

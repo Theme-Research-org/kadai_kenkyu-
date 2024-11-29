@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class ButtonFunc : MonoBehaviour
@@ -11,6 +12,7 @@ public class ButtonFunc : MonoBehaviour
     const int MaxTimeS = 300;
 
     [SerializeField] private string loadScene;
+    [SerializeField] private RectTransform namePopUp;
     [SerializeField] private RectTransform popUp;
     [SerializeField] private Canvas canvasPopUp;
     [SerializeField] private Collider2D panelC2D;
@@ -27,10 +29,12 @@ public class ButtonFunc : MonoBehaviour
     private Toggle _toggleTextOnly;
     private TMP_InputField _inputSpeaker;
     private Animator _animatorPopUp;
+    private Animator _animatorNamePopUp;
 
     void Awake()
     {
         _audioConvert = GetComponent<AudioConvert>();
+        if (gameObject.scene.name == "GameManager") MyGameManager.BFunc = this;
     }
     
     void Start()
@@ -54,6 +58,7 @@ public class ButtonFunc : MonoBehaviour
         if (popUp != null) 
         {
             _animatorPopUp = popUp.GetComponent<Animator>();
+            //_animatorNamePopUp = namePopUp.GetComponent<Animator>();
         }
     }
 
@@ -176,6 +181,17 @@ public class ButtonFunc : MonoBehaviour
             _animatorPopUp.SetBool(BPopup, true);
         }
     }
+    
+    /*public void OpenNameMenu()
+    {
+        if (!panelC2D.enabled)
+        {
+            canvasPopUp.enabled = true;
+            panelC2D.enabled = true;
+            _animatorNamePopUp.SetBool(BPopup, true);
+        }
+    }*/
+
     public async void ExitMenu()
     {
         _animatorPopUp.SetBool(BPopup, false);
@@ -183,4 +199,17 @@ public class ButtonFunc : MonoBehaviour
         canvasPopUp.enabled = false;
         panelC2D.enabled = false;
     }
+    
+    public async void ExitNameMenu()
+    {
+        _animatorNamePopUp.SetBool(BPopup, false);
+        await Task.Delay(750);
+        canvasPopUp.enabled = false;
+        panelC2D.enabled = false;
+    }
+}
+
+class ReqModel
+{
+    public string Txt;
 }

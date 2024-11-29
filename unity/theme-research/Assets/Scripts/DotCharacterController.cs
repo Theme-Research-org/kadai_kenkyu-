@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [ExecuteAlways]
 public class DotCharacterController : MonoBehaviour
 {
     public TextBubble Bubble { get; set; }
+    public int Exp { get; set; }
     
-    [SerializeField,Range(0,4)] private int initExpression;
+    [SerializeField,Range(0,4)] private int initExp;
     [SerializeField] private float newScale = 1f;
     
     private DotExpressionParameter _param;
@@ -25,6 +27,7 @@ public class DotCharacterController : MonoBehaviour
         {
             if (rt != transform && !rt.CompareTag("IgnoreRect")) _objectsNew.Add(rt);
         }
+        Exp = initExp;
     }
     
     // Start is called before the first frame update
@@ -36,7 +39,7 @@ public class DotCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _param.SetExpression(initExpression);
+        _param.SetExpression(Exp);
         foreach (var obj in _objectsNew)
         {
             var scale = obj.localScale;

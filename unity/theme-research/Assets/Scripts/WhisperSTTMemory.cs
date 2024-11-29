@@ -19,7 +19,7 @@ public class WhisperSTTMemory : MonoBehaviour
         };
         string payload = JsonUtility.ToJson(whisperRequestModel);
         byte[] postData = Encoding.UTF8.GetBytes(payload);
-        
+
         using (UnityWebRequest request = new UnityWebRequest(URL, "POST"))
         {
             request.uploadHandler = new UploadHandlerRaw(postData);
@@ -59,12 +59,36 @@ public class WhisperSTTMemory : MonoBehaviour
                 audioSource.Play();
                 Debug.Log("Playing");
             }
+
             Debug.Log(responseModel.input);
             string recognizedText = responseModel.output.text;
             WhisperEmotion recognizedEmotion = responseModel.output.emotion;
             Debug.Log("Response Text: " + recognizedText);
             Debug.Log("Emotions: (" + recognizedEmotion.Join(", ") + ")");
             MyGameManager.CurrentCharacter.Bubble.text = recognizedText;
+            var emotion = -1;
+            switch (recognizedEmotion.MaxParam())
+            {
+                case "surprise":
+                case "anticipation":
+                case "trust":
+                    emotion = 0;
+                    break;
+                case "joy":
+                    emotion = 1;
+                    break;
+                case "fear":
+                case "anger":
+                case "disgust":
+                    emotion = 2;
+                    break;
+                case "sadness":
+                    emotion = 3;
+                    break;
+                default:
+                    break;
+            }
+            MyGameManager.CurrentCharacter.Exp = emotion;
         }
     }
 }

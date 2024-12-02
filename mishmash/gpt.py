@@ -1,4 +1,5 @@
 import requests, os, json
+from time import sleep
 
 api_key = os.getenv("OPENAI_API_KEY")
 url = 'https://api.openai.com/v1/chat/completions'
@@ -94,33 +95,57 @@ Your behavioral guidelines:
 * Consider the content of the sites the user is browsing.
 '''
 
+if __name__ == '__main__':
+    while True:
+        target = input("Enter the parameter to test: ")
+        try:
+            with open("prompt_joy.txt", "r", encoding="utf-8") as f:
+                promptList = f.readlines()
+            break
+        except FileNotFoundError:
+            print("[File not found]")
 
-data = {
-    "model": "gpt-4o-mini",
-    "messages": [
-        {
-            "role": "system",
-            "content": system_prompt_en
-        },
-        {
-            "role": "user",
-            "content": "あなたは誰？僕は木のスタンド使いです。"
-        }
-    ],
-    "max_tokens": 16384,
-    "response_format": {
-        'type': 'json_object'
-    }
-}
+    results = []
 
-response = requests.post(url, headers=headers, json=data)
+    with open(f"result_{target}.txt", "a", encoding="utf-8") as f:
+        f.truncate(0)
 
-if response.status_code == 200:
-    response_data = response.json()
-    reply = response_data['choices'][0]['message']['content']
-    json_res = json.loads(reply)
-    print(reply)
-    print(json_res['text'])
-    print('Type: ' + str(type(reply)))
-else:
-    print(f"error: {response.status_code}, {response.text}")
+        for prompt in promptList:
+            data = {
+                "model": "gpt-4o-mini",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": system_prompt_en
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                "max_tokens": 4096,
+                "response_format": {
+                    'type': 'json_object'
+                }
+            }
+
+            response = requests.post(url, headers=headers, json=data)
+
+            if response.status_code == 200:
+                response_data = response.json()
+                reply = response_data['choices'][0]['message']['content']
+                json_res = json.loads(reply)
+                emotion = json_res["emotion"]
+                text = json_res["text"]
+                print(f"\033[32m[Success]\033[0m emotion: {emotion}, text: {text}")
+            else:
+                emotion = {"code": response.status_code}
+                text = response.text
+                print(f"\033[31m[Failure]\033[0m code: {emotion["code"]}, text: {text}")
+
+            resultText = ""
+            for key, value in emotion.items():
+                resultText += f"{key}={value},"
+            resultText += f"text='{text}'"
+            print(resultText, file=f)
+

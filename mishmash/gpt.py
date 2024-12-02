@@ -99,7 +99,7 @@ if __name__ == '__main__':
     while True:
         target = input("Enter the parameter to test: ")
         try:
-            with open("prompt_joy.txt", "r", encoding="utf-8") as f:
+            with open(f"prompt_{target}.txt", "r", encoding="utf-8") as f:
                 promptList = f.readlines()
             break
         except FileNotFoundError:

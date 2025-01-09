@@ -1,6 +1,6 @@
 // res_article_tpl-23 v1
 
-#let sans = "BIZ UDPGothic"
+#let font_main = ("Century", "MS Mincho")
 
 #let conf(
   //
@@ -27,7 +27,7 @@
   )
 
   set text(
-    font: sans,
+    font: font_main,
     size: 10.5pt,
     kerning: false,
     // tracking: 10.65pt - 10.5pt,
@@ -74,7 +74,7 @@
   }
 
   show heading.where(depth: 1): it => {
-    text(size: 11pt, pad(top: 1em, left: -1em, it))
+    text(size: 11pt, stroke:.5pt, pad(top: 1em, left: -1em, it))
   }
 
   show heading.where(depth: 2): it => {
@@ -83,13 +83,13 @@
 
   box(width: 100%)[
     #set align(center)
-    #text(size: 14pt, weight: "bold", title.jp)\
+    #text(size: 12pt, stroke: 0.5pt, title.jp)\
     #text(size: 12pt, title.en)\
     #text(size: 12pt)[
       #for p in member [
         #p.class #p.name
         #if p.name != member.last().name [・]
-      ]
+      ]\
       指導教諭: #teacher
     ]\
     #v(1em)

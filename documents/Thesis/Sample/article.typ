@@ -46,7 +46,7 @@
     // 表題 - 和文
     jp: [音声認識を用いたキャラクター育成アプリケーションの開発],
     // 表題 - 英文
-    en: [Title -- English],
+    en: [Development of Character Growing Application Using Speech Recognition],
   ),
   // メンバー
   member: member,
@@ -58,21 +58,14 @@
 )
 
 = はじめに
-#articleFig(
-  imgPath: "img/2023-12-18-00-14-25.png",
-  imgCaption: [Lenna @lenna],
-)[
-  #i あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 @ポラーノの広場
-   
-  #i Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. @lorem-ipsum
-]
+#i 近年、青少年の間で「ヤバい」「エモい」などの単純な表現が多用され、国語力や表現力の低下が問題視されている。文部科学省の調査によると、コミュニケーションには「意思疎通」「協調性」「自己表現力」が必要とされている。しかし、適切な言葉を用いる力が不足しているため、日常会話でも意思を正確に伝えられないケースがあると考えられる。私たちは、普段からのコミュニケーションが表現力の向上につながると考え、コミュニケーションを通じて表現力を育成するアプリケーションの開発を行った。
 
 = 論理・実験
 == 小見出し1
-#i あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+#articleFig(
+  imgPath: "img/2023-12-18-00-14-25.png",
+  imgCaption: [Lenna @lenna],
+)[#i あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。]
 
 == 小見出し2
 #i あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。

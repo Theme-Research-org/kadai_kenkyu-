@@ -4,7 +4,7 @@
 
 #let member = (
   // クラス, 名前
-  (class: "T3A", name: "XXX XXX", handled: [
+  (class: "J3A", name: "日比 瑛太", handled: [
     // 自分が担当したところ
     + XXX
   ], handledResult: [
@@ -15,7 +15,23 @@
     // 自分が担当したところの今後の課題・考察
     + XXX
   ]),
-  (class: "T3A", name: "YYY YYY", handled: [
+  (class: "J3A", name: "本田 楓", handled: [
+    + XXX
+  ], handledResult: [
+    + XXX
+    + XXX
+  ], futureIssues: [
+    + XXX
+  ]),
+  (class: "J3A", name: "本間 晶", handled: [
+    + XXX
+  ], handledResult: [
+    + XXX
+    + XXX
+  ], futureIssues: [
+    + XXX
+  ]),
+  (class: "J3A", name: "松浦 颯", handled: [
     + XXX
   ], handledResult: [
     + XXX
@@ -28,16 +44,16 @@
 #show: doc => conf(
   title: (
     // 表題 - 和文
-    jp: [表題 -- 和文],
+    jp: [音声認識を用いたキャラクター育成アプリケーションの開発],
     // 表題 - 英文
     en: [Title -- English],
   ),
   // メンバー
   member: member,
   // 指導教諭
-  teacher: "ZZZ ZZZ",
+  teacher: [辰巳 良美, 中山 智明],
   // 発表学科略号/発表番号
-  header: [X00],
+  header: [J03],
   doc,
 )
 

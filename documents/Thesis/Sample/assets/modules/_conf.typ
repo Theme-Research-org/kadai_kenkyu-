@@ -1,6 +1,6 @@
-// res_article_tpl-23 v0
+// res_article_tpl-23 v1
 
-#let sans = ("BIZ UDPGothic")
+#let sans = "BIZ UDPGothic"
 
 #let conf(
   //
@@ -32,26 +32,52 @@
     kerning: false,
     // tracking: 10.65pt - 10.5pt,
     hyphenate: false,
+    lang: "ja",
   )
 
   set par(justify: true, leading: 21.9pt - 10.5pt)
 
-  set heading(numbering: (..n) => {
-    let level = n.pos().len()
-    if level == 1 {
-      numbering("1.", ..n)
+  set heading(
+    numbering: "1.",
+    supplement: it => ([章], [節]).at(it.depth - 1, default: [節]),
+  )
+
+  show heading.where(): it => {
+    if (it.depth == 1) {
+      return it
     }
-  }, supplement: it => ([章], [節]).at(it.level - 1, default: [章]))
+    return it.body
+  }
+
+  show ref: it => {
+    let el = it.element
+    if el == none {
+      return it
+    }
+
+    if el.func() == heading {
+      return link(
+        el.location(),
+        "第" + numbering(
+          "1.1",
+          ..counter(heading).at(el.location()),
+        ) + el.supplement,
+      )
+    }
+
+    return it
+  }
+
 
   show heading: it => {
     pad(bottom: 0.3em, it)
   }
 
-  show heading.where(level: 1): it => {
+  show heading.where(depth: 1): it => {
     text(size: 11pt, pad(top: 1em, left: -1em, it))
   }
 
-  show heading.where(level: 2): it => {
+  show heading.where(depth: 2): it => {
     text(size: 10.5pt, it)
   }
 

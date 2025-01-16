@@ -70,15 +70,15 @@
 
 
   show heading: it => {
-    pad(bottom: 0.3em, it)
+    pad(bottom: 0.5em, it)
   }
 
   show heading.where(depth: 1): it => {
-    text(size: 11pt, stroke:.5pt, pad(top: 1em, left: -1em, it))
+    text(size: 11pt, stroke: 0.5pt, pad(top: 1em, left: -1em, it))
   }
 
   show heading.where(depth: 2): it => {
-    text(size: 10.5pt, it)
+    text(size: 10.5pt, stroke: 0.5pt, it)
   }
 
   box(width: 100%)[

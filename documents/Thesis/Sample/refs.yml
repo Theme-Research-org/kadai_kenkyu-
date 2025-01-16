@@ -42,7 +42,7 @@ plutchik:
   title: ロバート・プルチック - Wikipedia
   author: フリー百科事典『ウィキペディア（Wikipedia）』
   url:
-    value: https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%90%E3%83%BC%E3%83%88%E3%83%BB%E3%83%97%E3%83%AB%E3%83%81%E3%83%83%E3%82%AF
+    value: https://ja.wikipedia.org/wiki/ロバート・プルチック
     date: 2025-01-16
 
 openai: 
@@ -51,4 +51,12 @@ openai:
   author: [Tyna Eloundou, Alex Beutel, David G. Robinson, Keren Gu-Lemberg, Anna-Luisa Brakman, Pamela Mishkin, Meghan Shah, Johannes Heidecke, Lilian Weng, Adam Tauman Kalai]
   url: 
     value: https://cdn.openai.com/papers/first-person-fairness-in-chatbots.pdf
+    date: 2025-01-16
+
+mhlw:
+  type: web
+  title: 「YES-プログラム」（若年者就職基礎能力支援事業）の対象講座（254講座）・対象試験（29試験）を新たに認定
+  author: 厚生労働省
+  url:
+    value: https://www.mhlw.go.jp/houdou/2009/03/h0313-4.html
     date: 2025-01-16

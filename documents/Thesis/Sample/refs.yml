@@ -1,0 +1,62 @@
+ポラーノの広場:
+  type: book
+  title: ポラーノの広場
+  author: 宮沢賢治
+  publisher: 新潮文庫
+  date: 1995
+
+lorem-ipsum:
+  type: web
+  title: lorem ipsum - Wikipedia
+  author: フリー百科事典『ウィキペディア（Wikipedia）』
+  url:
+    value: https://ja.wikipedia.org/wiki/Lorem_ipsum
+    date: 2023-12-17
+
+lenna:
+  type: web
+  title: 標準画像データベース[神奈川工大 信号処理応用研究室]
+  author: 神奈川工科大学 情報学部 情報工学科 信号処理応用研究室
+  url:
+    value: http://www.ess.ic.kanagawa-it.ac.jp/app_images_j.html
+    date: 2023-12-17
+
+keidanren:
+  type: web
+  title: 2018年度 新卒採用に関するアンケート調査結果
+  author: 一般社団法人 日本経済団体連合会
+  url:
+    value: https://www.keidanren.or.jp/policy/2018/110.pdf
+    date: 2025-01-14
+
+mext-comm:
+  type: web
+  title: コミュニケーション教育推進会議 資料6 『コミュニケーション能力』に関する指摘・調査等
+  author: 文部科学省
+  url:
+    value: https://www.mext.go.jp/b_menu/shingi/chousa/shotou/075/shiryo/__icsFiles/afieldfile/2010/06/22/1294462_03.pdf
+    date: 2025-01-14
+
+plutchik:
+  type: web
+  title: ロバート・プルチック - Wikipedia
+  author: フリー百科事典『ウィキペディア（Wikipedia）』
+  url:
+    value: https://ja.wikipedia.org/wiki/ロバート・プルチック
+    date: 2025-01-16
+
+openai: 
+  type: web
+  title: First-Person Fairness in Chatbots
+  author: [Tyna Eloundou, Alex Beutel, David G. Robinson, Keren Gu-Lemberg, Anna-Luisa Brakman, Pamela Mishkin, Meghan Shah, Johannes Heidecke, Lilian Weng, Adam Tauman Kalai]
+  url: 
+    value: https://cdn.openai.com/papers/first-person-fairness-in-chatbots.pdf
+    date: 2025-01-16
+
+mhlw:
+  type: web
+  title: 「YES-プログラム」（若年者就職基礎能力支援事業）の対象講座（254講座）・対象試験（29試験）を新たに認定
+  author: 厚生労働省
+  url:
+    value: https://www.mhlw.go.jp/houdou/2009/03/h0313-4.html
+    date: 2025-01-16
